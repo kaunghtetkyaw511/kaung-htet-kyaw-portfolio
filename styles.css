@@ -387,7 +387,7 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: 50% 32%;
-  filter: grayscale(1) contrast(1.07);
+  filter: contrast(1.04) saturate(1.04);
   transition:
     filter 300ms ease,
     transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -395,7 +395,7 @@ img {
 
 .profile-card:hover img {
   transform: scale(1.035);
-  filter: grayscale(0.35) contrast(1.04);
+  filter: contrast(1.02) saturate(1.1);
 }
 
 .profile-card-copy {
@@ -719,7 +719,7 @@ img {
   width: 100%;
   height: 280px;
   object-fit: cover;
-  filter: grayscale(1) brightness(0.48);
+  filter: brightness(0.58) saturate(0.92);
 }
 
 .browser-panel {
@@ -777,7 +777,7 @@ img {
   aspect-ratio: 0.58;
   border-radius: 20px;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.1);
+  filter: contrast(1.06) saturate(1.02);
 }
 
 .phone-mockup span {
@@ -866,7 +866,7 @@ img {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  filter: grayscale(1) brightness(0.42);
+  filter: brightness(0.56) saturate(0.92);
   transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1038,7 +1038,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.55) brightness(0.72);
+  filter: brightness(0.82) saturate(0.95);
   transition:
     transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
     filter 300ms ease;
@@ -1060,7 +1060,7 @@ img {
 .video-card:hover img,
 .video-card:focus-visible img {
   transform: scale(1.045);
-  filter: grayscale(0) brightness(0.9);
+  filter: brightness(0.96) saturate(1.06);
 }
 
 .work-card span,
@@ -1179,7 +1179,6 @@ img {
   background:
     linear-gradient(180deg, rgb(0 0 0 / 65%), rgb(0 0 0 / 82%)),
     url("./assets/hero-cover.jpg") center / cover;
-  filter: grayscale(1);
 }
 
 .contact-section::after {
@@ -1371,7 +1370,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.5) brightness(0.68);
+  filter: brightness(0.76) saturate(0.96);
 }
 
 .video-play-large {
