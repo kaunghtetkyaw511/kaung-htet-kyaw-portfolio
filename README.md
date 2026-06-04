@@ -1,6 +1,7 @@
-# UI Portfolio
+# Kaung Htet Kyaw Creative Portfolio
 
-Portfolio and UI experiments for bue bue.
+A cinematic, motion-led portfolio for graphic design, web design, UX/UI,
+content, and motion graphics work.
 
 ## GitHub Pages
 
