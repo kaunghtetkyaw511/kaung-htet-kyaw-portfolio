@@ -385,16 +385,13 @@ img {
 .profile-frame img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: 50% 32%;
   filter: contrast(1.04) saturate(1.04);
-  transition:
-    filter 300ms ease,
-    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter 300ms ease;
 }
 
 .profile-card:hover img {
-  transform: scale(1.035);
   filter: contrast(1.02) saturate(1.1);
 }
 
@@ -718,7 +715,8 @@ img {
 .browser-mockup img {
   width: 100%;
   height: 280px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #080809;
   filter: brightness(0.58) saturate(0.92);
 }
 
@@ -776,7 +774,8 @@ img {
   width: 100%;
   aspect-ratio: 0.58;
   border-radius: 20px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #080809;
   filter: contrast(1.06) saturate(1.02);
 }
 
@@ -865,13 +864,14 @@ img {
 .motion-board img {
   width: 100%;
   height: 320px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #080809;
   filter: brightness(0.56) saturate(0.92);
-  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter 300ms ease;
 }
 
 .digital-card:hover .motion-board img {
-  transform: scale(1.04);
+  filter: brightness(0.66) saturate(1);
 }
 
 .motion-orbit {
@@ -1003,8 +1003,7 @@ img {
 
 .portfolio-grid {
   display: grid;
-  grid-auto-flow: dense;
-  grid-auto-rows: 240px;
+  grid-auto-rows: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
 }
@@ -1021,15 +1020,14 @@ img {
 }
 
 .work-card {
-  min-height: 240px;
+  min-height: 0;
+  aspect-ratio: 1;
 }
 
-.work-card-wide {
-  grid-column: span 2;
-}
-
+.work-card-wide,
 .work-card-tall {
-  grid-row: span 2;
+  grid-column: auto;
+  grid-row: auto;
 }
 
 .work-card img,
@@ -1037,11 +1035,9 @@ img {
 .video-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   filter: brightness(0.82) saturate(0.95);
-  transition:
-    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
-    filter 300ms ease;
+  transition: filter 300ms ease;
 }
 
 .work-card::after,
@@ -1059,7 +1055,6 @@ img {
 .content-card:focus-visible img,
 .video-card:hover img,
 .video-card:focus-visible img {
-  transform: scale(1.045);
   filter: brightness(0.96) saturate(1.06);
 }
 
@@ -1101,7 +1096,8 @@ img {
 }
 
 .video-card {
-  min-height: 500px;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
 }
 
 .video-card .video-play {
@@ -1161,7 +1157,8 @@ img {
 }
 
 .content-card {
-  min-height: 360px;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
 }
 
 .contact-section {
@@ -1369,7 +1366,8 @@ img {
 .reel-stage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #080809;
   filter: brightness(0.76) saturate(0.96);
 }
 
@@ -1595,7 +1593,7 @@ img {
   }
 
   .portfolio-grid {
-    grid-auto-rows: 220px;
+    grid-auto-rows: auto;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1604,7 +1602,7 @@ img {
   }
 
   .content-card {
-    min-height: 320px;
+    min-height: 0;
   }
 
   .reel-modal {
@@ -1717,7 +1715,7 @@ img {
 
   .portfolio-grid {
     display: grid;
-    grid-auto-rows: 280px;
+    grid-auto-rows: auto;
     grid-template-columns: 1fr;
   }
 
@@ -1729,7 +1727,7 @@ img {
   }
 
   .video-card {
-    min-height: 440px;
+    min-height: 0;
   }
 
   .content-grid {
@@ -1737,7 +1735,7 @@ img {
   }
 
   .content-card {
-    min-height: 420px;
+    min-height: 0;
   }
 
   .contact-content h2 {
