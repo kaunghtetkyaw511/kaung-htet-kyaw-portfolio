@@ -1,6 +1,6 @@
 # UI Portfolio
 
-Portfolio and UI experiments for Kaung Htet Kyaw.
+Portfolio and UI experiments for bue bue.
 
 ## GitHub Pages
 
