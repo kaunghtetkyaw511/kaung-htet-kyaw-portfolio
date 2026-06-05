@@ -779,13 +779,15 @@ img {
   text-wrap: pretty;
 }
 
-.portfolio-grid,
-.content-grid {
-  column-gap: 16px;
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
 }
 
-.portfolio-grid {
-  column-count: 4;
+.content-grid {
+  column-gap: 16px;
+  column-count: 5;
 }
 
 .portfolio-group + .portfolio-group {
@@ -823,10 +825,6 @@ img {
   display: grid;
   grid-template-columns: repeat(4, minmax(180px, 1fr));
   gap: 16px;
-}
-
-.content-grid {
-  column-count: 5;
 }
 
 .work-card,
@@ -916,6 +914,12 @@ button.video-card {
 
 .logo-placeholder:nth-child(n) {
   min-height: clamp(230px, 22vw, 340px);
+}
+
+.portfolio-grid .work-placeholder,
+.portfolio-grid .work-placeholder:nth-child(n) {
+  min-height: 0;
+  aspect-ratio: 1400 / 1100;
 }
 
 .work-placeholder::before {
@@ -1688,7 +1692,7 @@ button.video-card {
   }
 
   .portfolio-grid {
-    column-count: 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .logo-grid {
@@ -1821,9 +1825,12 @@ button.video-card {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-grid,
   .content-grid {
     column-count: 2;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .logo-grid {
@@ -1896,9 +1903,12 @@ button.video-card {
     font-size: 0.84rem;
   }
 
-  .portfolio-grid,
   .content-grid {
     column-count: 1;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
   }
 
   .logo-grid {
