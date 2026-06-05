@@ -1,7 +1,7 @@
-# Kaung Htet Kyaw Creative Portfolio
+# Kaung Htet Kyaw Global Portfolio
 
-A cinematic, motion-led portfolio for graphic design, web design, UX/UI,
-content, and motion graphics work.
+A professional global web portfolio for graphic design, web design, UX/UI,
+content systems, and motion graphics work.
 
 ## GitHub Pages
 
