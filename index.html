@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Global portfolio of Kaung Htet Kyaw, a creative designer building graphic design, UX/UI, websites, content, and motion graphics."
+      content="Hire Kaung Htet Kyaw for UI design, web design, portfolio websites, online shops, graphic design, content design, and motion graphics."
     />
-    <title>Kaung Htet Kyaw | Global Creative Portfolio</title>
+    <title>Kaung Htet Kyaw | UI, Web & Motion Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -25,7 +25,7 @@
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Kaung Htet Kyaw home">
         <span class="brand-mark">KHK</span>
-        <span class="brand-copy">Global Creative Portfolio</span>
+        <span class="brand-copy">UI / Web / Motion</span>
       </a>
 
       <button
@@ -41,8 +41,9 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#web">Web</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#work">Portfolio</a>
         <a href="#motion">Motion</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -54,214 +55,265 @@
 
     <main id="main">
       <section id="top" class="hero">
-        <div class="hero-media reveal">
-          <img src="./assets/hero-cover.jpg" alt="" aria-hidden="true" />
-        </div>
-
-        <div class="hero-content">
-          <p class="eyebrow reveal">Available worldwide / Thailand based</p>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Available for freelance projects worldwide</p>
           <h1 class="reveal">
-            Global web portfolio for design, digital brands, and motion.
+            Hire a UI designer for websites, graphics, and motion content.
           </h1>
           <p class="hero-summary reveal">
-            I am Kaung Htet Kyaw, a creative designer building premium graphics,
-            UX/UI concepts, portfolio websites, mini websites, online shops,
-            content systems, and motion graphics for modern clients.
+            I help brands and creators design clean portfolio websites, online
+            shop layouts, mini websites, UX/UI screens, campaign graphics,
+            social content, and motion graphics that look professional on a
+            global stage.
           </p>
-          <div class="hero-actions reveal">
-            <a class="button button-primary" href="#work">View portfolio</a>
-            <a class="button" href="#contact">Work with me</a>
+
+          <form class="service-search reveal" action="#services">
+            <label class="sr-only" for="project-search">Project type</label>
+            <input
+              id="project-search"
+              type="text"
+              value="I need a portfolio website, UX/UI design, or motion graphic"
+              readonly
+            />
+            <button type="submit">Explore services</button>
+          </form>
+
+          <div class="quick-tags reveal" aria-label="Popular services">
+            <span>Portfolio website</span>
+            <span>Online shop</span>
+            <span>UX/UI design</span>
+            <span>Motion graphics</span>
           </div>
         </div>
 
-        <aside class="hero-profile reveal" aria-label="Profile snapshot">
-          <img
-            src="./assets/profile.jpg"
-            alt="Portrait of Kaung Htet Kyaw"
-            width="1100"
-            height="1289"
-          />
-          <div>
-            <span>Creative Designer</span>
-            <strong>Kaung Htet Kyaw</strong>
-            <p>Graphic / Web / UX/UI / Motion</p>
+        <aside class="talent-card reveal" aria-label="Designer profile card">
+          <div class="talent-cover">
+            <img
+              class="cover-photo"
+              src="./assets/hero-cover.jpg"
+              alt="Portfolio cover artwork"
+              width="1600"
+              height="1200"
+            />
+            <img
+              class="profile-photo"
+              src="./assets/profile.jpg"
+              alt="Portrait of Kaung Htet Kyaw"
+              width="1100"
+              height="1289"
+            />
+            <span class="status-dot">Available now</span>
           </div>
+          <div class="talent-info">
+            <div>
+              <h2>Kaung Htet Kyaw</h2>
+              <p>Creative Designer / UI Designer</p>
+            </div>
+            <strong>Top service: Web portfolio design</strong>
+          </div>
+          <dl class="talent-stats">
+            <div><dt>Experience</dt><dd>3+ years</dd></div>
+            <div><dt>Location</dt><dd>Thailand</dd></div>
+            <div><dt>Delivery</dt><dd>Remote</dd></div>
+          </dl>
         </aside>
 
-        <div class="hero-stats reveal" aria-label="Portfolio facts">
-          <div><strong>3+</strong><span>Years freelance experience</span></div>
-          <div><strong>30+</strong><span>Design assets showcased</span></div>
-          <div><strong>5</strong><span>Core creative services</span></div>
+        <div class="floating-ui floating-ui-a reveal" aria-hidden="true">
+          <span>UX Flow</span>
+          <strong>Landing page wireframe</strong>
+          <i></i>
+        </div>
+        <div class="floating-ui floating-ui-b reveal" aria-hidden="true">
+          <span>Motion</span>
+          <strong>Social reel animation</strong>
+          <i></i>
+        </div>
+      </section>
+
+      <div class="logo-strip" aria-label="Creative focus areas">
+        <div class="logo-track">
+          <span>Web Design</span>
+          <span>UX/UI</span>
+          <span>Graphic Design</span>
+          <span>Motion Graphics</span>
+          <span>Content Posts</span>
+          <span>Online Shop UI</span>
+          <span>Web Design</span>
+          <span>UX/UI</span>
+          <span>Graphic Design</span>
+          <span>Motion Graphics</span>
+          <span>Content Posts</span>
+          <span>Online Shop UI</span>
+        </div>
+      </div>
+
+      <section id="services" class="section services-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Browse services</p>
+          <h2>Choose what you want to build.</h2>
+          <p>
+            A clear service menu, designed like a freelance marketplace profile
+            so clients instantly understand what I can deliver.
+          </p>
+        </div>
+
+        <div class="market-grid">
+          <article class="market-card reveal">
+            <span>Build my website</span>
+            <h3>Mini sites, portfolio websites, and online shop layouts.</h3>
+            <p>Responsive sections, polished UI, conversion-focused CTA flow, and launch-ready structure.</p>
+            <a href="#contact">Start website project</a>
+          </article>
+          <article class="market-card reveal">
+            <span>Design my interface</span>
+            <h3>UX/UI screens for clean digital experiences.</h3>
+            <p>Hero sections, mobile layouts, product cards, navigation, wireframe thinking, and visual systems.</p>
+            <a href="#contact">Start UI project</a>
+          </article>
+          <article class="market-card reveal">
+            <span>Create my visuals</span>
+            <h3>Graphic design for brands, campaigns, and social media.</h3>
+            <p>Post designs, posters, banners, marketing graphics, content layouts, and branded assets.</p>
+            <a href="#work">View designs</a>
+          </article>
+          <article class="market-card market-card-green reveal">
+            <span>Animate my content</span>
+            <h3>Motion graphics and social video direction.</h3>
+            <p>Reel spaces, title sequences, animated graphics, CapCut edits, and After Effects motion concepts.</p>
+            <a href="#motion">View motion</a>
+          </article>
         </div>
       </section>
 
       <section id="about" class="section about-section">
-        <div class="section-intro reveal">
-          <p class="eyebrow">Professional summary</p>
-          <h2>Design that looks sharp, communicates clearly, and is ready for global audiences.</h2>
+        <div class="section-heading reveal">
+          <p class="eyebrow">About me</p>
+          <h2>A practical creative partner for design, websites, UI, and motion.</h2>
+          <p>
+            I combine graphic design, UX/UI thinking, website structure, and
+            motion direction so each project feels clear, modern, and ready for
+            global clients.
+          </p>
         </div>
 
         <div class="about-grid">
-          <div class="about-copy reveal">
+          <article class="about-panel reveal">
+            <h3>Professional summary</h3>
             <p>
-              I create visual systems for social media, brands, websites, and
-              digital campaigns. My work combines clean composition, strong
-              hierarchy, modern motion thinking, and practical web design so
-              each project feels polished and useful.
+              I am Kaung Htet Kyaw, a creative designer focused on portfolio
+              websites, mini websites, online shop layouts, web design, UX/UI
+              design, graphic design, content posts, and motion graphics. My
+              work is built for clients who need polished visuals, clear
+              communication, and professional digital presentation.
             </p>
             <p>
-              I can design and build mini websites, portfolio websites, online
-              shop websites, web designs, UX/UI interfaces, social media posts,
-              marketing campaigns, and motion graphics. I am comfortable working
-              remotely with clients and turning ideas into finished digital
-              products.
+              I can help plan and design a website from the first section to the
+              final call-to-action, create campaign graphics for social media,
+              prepare content systems, and build motion-ready visuals for reels,
+              title graphics, and video-style portfolio sections.
             </p>
-          </div>
+          </article>
 
-          <dl class="profile-facts reveal">
-            <div><dt>Location</dt><dd>Thailand</dd></div>
-            <div><dt>Nationality</dt><dd>Myanmar</dd></div>
-            <div><dt>Work style</dt><dd>Remote / Freelance / Project based</dd></div>
-            <div><dt>Focus</dt><dd>Graphic, web, UX/UI, content, motion</dd></div>
+          <dl class="about-facts reveal">
+            <div><dt>Style</dt><dd>Modern UI / marketplace profile / motion-led layout</dd></div>
+            <div><dt>Web work</dt><dd>Mini websites, portfolio websites, online shop websites</dd></div>
+            <div><dt>Design work</dt><dd>Graphic design, UX/UI, web design, content systems</dd></div>
+            <div><dt>Motion work</dt><dd>After Effects concepts, CapCut reels, animated visual direction</dd></div>
           </dl>
         </div>
       </section>
 
-      <section id="services" class="section services-section">
-        <div class="section-intro reveal">
-          <p class="eyebrow">Global-ready services</p>
-          <h2>One creative partner for brand visuals, websites, UX/UI, and motion-led content.</h2>
+      <section id="process" class="section process-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>A simple process for global clients.</h2>
+          <p>
+            Clear steps, fast communication, and visible progress from idea to
+            finished creative work.
+          </p>
         </div>
 
-        <div class="services-grid">
-          <article class="service-card reveal">
+        <div class="process-grid">
+          <article class="process-card reveal">
             <span>01</span>
-            <h3>Graphic design</h3>
-            <p>Social media designs, campaign posters, digital ads, banners, and visual concepts with strong brand consistency.</p>
+            <h3>Share the goal</h3>
+            <p>Tell me the website, UI, campaign, or motion idea you want to create.</p>
           </article>
-          <article class="service-card reveal">
+          <article class="process-card reveal">
             <span>02</span>
-            <h3>Website design</h3>
-            <p>Mini websites, portfolio websites, online shop websites, landing pages, and responsive web layouts.</p>
+            <h3>Review the direction</h3>
+            <p>I create a clean visual direction with layout, style, content hierarchy, and motion ideas.</p>
           </article>
-          <article class="service-card reveal">
+          <article class="process-card reveal">
             <span>03</span>
-            <h3>UX/UI design</h3>
-            <p>User flows, interface layouts, clean sections, product screens, and digital systems designed for clarity.</p>
-          </article>
-          <article class="service-card reveal">
-            <span>04</span>
-            <h3>Motion graphics</h3>
-            <p>Animated content direction, title graphics, social reels, motion concepts, and video-ready visual assets.</p>
-          </article>
-          <article class="service-card reveal">
-            <span>05</span>
-            <h3>Content systems</h3>
-            <p>Reusable content visuals for Facebook, Instagram, promotions, launches, seasonal posts, and brand storytelling.</p>
+            <h3>Launch polished work</h3>
+            <p>You receive final designs, website-ready assets, or motion-ready content prepared for use.</p>
           </article>
         </div>
       </section>
 
       <section id="work" class="section work-section">
         <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Selected graphic design</p>
-            <h2>15 portfolio pieces</h2>
-          </div>
-          <p>Click any project to view the full-size image with a back button.</p>
+          <p class="eyebrow">Portfolio marketplace</p>
+          <h2>Selected graphic design work.</h2>
+          <p>15 clickable projects. Open any design in full size and return with the back button.</p>
         </div>
 
         <div class="portfolio-grid">
           <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-1.jpg" data-caption="The Century / Property campaign"><img src="./assets/portfolio/graphic-1.jpg" alt="The Century property campaign" loading="lazy" /><span>Property campaign</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-2.jpg" data-caption="Air ticket and hotel booking campaign"><img src="./assets/portfolio/graphic-2.jpg" alt="Air ticket and hotel booking campaign" loading="lazy" /><span>Travel booking</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-3.jpg" data-caption="Study in Europe campaign"><img src="./assets/portfolio/graphic-3.jpg" alt="Study in Europe campaign" loading="lazy" /><span>Education campaign</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-4.jpg" data-caption="Rewards campaign"><img src="./assets/portfolio/graphic-4.jpg" alt="Rewards campaign design" loading="lazy" /><span>Rewards campaign</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-5.jpg" data-caption="Drive with confidence campaign"><img src="./assets/portfolio/graphic-5.jpg" alt="Automotive campaign design" loading="lazy" /><span>Automotive social</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-6.jpg" data-caption="Travel booking social design"><img src="./assets/portfolio/graphic-6.jpg" alt="Travel booking design" loading="lazy" /><span>Travel service</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-2.jpg" data-caption="Air ticket and hotel booking campaign"><img src="./assets/portfolio/graphic-2.jpg" alt="Travel booking campaign" loading="lazy" /><span>Travel booking</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-3.jpg" data-caption="Study in Europe campaign"><img src="./assets/portfolio/graphic-3.jpg" alt="Study in Europe campaign" loading="lazy" /><span>Education</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-4.jpg" data-caption="Rewards campaign"><img src="./assets/portfolio/graphic-4.jpg" alt="Rewards campaign" loading="lazy" /><span>Rewards</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-5.jpg" data-caption="Drive with confidence campaign"><img src="./assets/portfolio/graphic-5.jpg" alt="Automotive campaign" loading="lazy" /><span>Automotive</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-6.jpg" data-caption="Travel booking social design"><img src="./assets/portfolio/graphic-6.jpg" alt="Travel service campaign" loading="lazy" /><span>Travel service</span></button>
           <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-7.jpg" data-caption="Visa extension campaign"><img src="./assets/portfolio/graphic-7.jpg" alt="Visa extension campaign" loading="lazy" /><span>Visa service</span></button>
           <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-8.jpg" data-caption="Car rental campaign"><img src="./assets/portfolio/graphic-8.jpg" alt="Car rental campaign" loading="lazy" /><span>Car rental</span></button>
           <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-9.jpg" data-caption="Study in Georgia campaign"><img src="./assets/portfolio/graphic-9.jpg" alt="Study in Georgia campaign" loading="lazy" /><span>Study abroad</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-10.jpg" data-caption="Travel payment campaign"><img src="./assets/portfolio/graphic-10.jpg" alt="Travel payment campaign" loading="lazy" /><span>Travel payment</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-11.jpg" data-caption="Everyday essentials promotion"><img src="./assets/portfolio/graphic-11.jpg" alt="Retail promotion campaign" loading="lazy" /><span>Retail promotion</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-12.jpg" data-caption="Condo sales launch"><img src="./assets/portfolio/graphic-12.jpg" alt="Condo sales launch campaign" loading="lazy" /><span>Property launch</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-10.jpg" data-caption="Travel payment campaign"><img src="./assets/portfolio/graphic-10.jpg" alt="Travel payment campaign" loading="lazy" /><span>Payment post</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-11.jpg" data-caption="Everyday essentials promotion"><img src="./assets/portfolio/graphic-11.jpg" alt="Retail promotion campaign" loading="lazy" /><span>Retail promo</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-12.jpg" data-caption="Condo sales launch"><img src="./assets/portfolio/graphic-12.jpg" alt="Condo sales launch" loading="lazy" /><span>Property launch</span></button>
           <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-13.jpg" data-caption="Good Choice brand identity"><img src="./assets/portfolio/graphic-13.jpg" alt="Good Choice brand identity" loading="lazy" /><span>Brand identity</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-14.jpg" data-caption="Hsu San fashion identity"><img src="./assets/portfolio/graphic-14.jpg" alt="Hsu San fashion identity" loading="lazy" /><span>Fashion identity</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-15.jpg" data-caption="Thae Thae brand identity"><img src="./assets/portfolio/graphic-15.jpg" alt="Thae Thae brand identity" loading="lazy" /><span>Brand system</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-14.jpg" data-caption="Hsu San fashion identity"><img src="./assets/portfolio/graphic-14.jpg" alt="Fashion identity" loading="lazy" /><span>Fashion identity</span></button>
+          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-15.jpg" data-caption="Thae Thae brand identity"><img src="./assets/portfolio/graphic-15.jpg" alt="Brand system" loading="lazy" /><span>Brand system</span></button>
         </div>
       </section>
 
-      <section id="web" class="section web-section">
+      <section id="ui-showcase" class="section ui-showcase">
         <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Web / UX / UI</p>
-            <h2>Digital experience showcase</h2>
-          </div>
-          <p>Dedicated space for website design, UX/UI work, web design, online shop concepts, and motion-driven interfaces.</p>
+          <p class="eyebrow">UI design showcase</p>
+          <h2>Website and app-style components.</h2>
+          <p>Clean marketplace-style UI blocks for websites, shops, portfolios, dashboards, and landing pages.</p>
         </div>
 
-        <div class="web-grid">
-          <article class="web-card web-card-large reveal">
+        <div class="ui-grid">
+          <article class="ui-card ui-card-large reveal">
             <div class="browser-shell">
               <div class="browser-bar"><i></i><i></i><i></i></div>
-              <img src="./assets/hero-cover.jpg" alt="Abstract website hero preview" loading="lazy" />
+              <div class="mock-hero">
+                <span>Portfolio Website</span>
+                <strong>Hire creative design for your next launch</strong>
+                <p>Service cards, portfolio proof, motion previews, and a clear contact journey.</p>
+              </div>
             </div>
-            <div>
-              <span>Portfolio websites</span>
-              <h3>Professional personal sites with strong first impressions.</h3>
-            </div>
           </article>
-          <article class="web-card reveal">
-            <span>Mini websites</span>
-            <h3>Simple, fast, clean pages for services and campaigns.</h3>
-            <p>Ideal for small brands, creators, promotions, and quick launches.</p>
+          <article class="ui-card reveal">
+            <span>Online shop UI</span>
+            <strong>Product cards with strong visual hierarchy.</strong>
+            <div class="mini-product"><i></i><i></i><i></i></div>
           </article>
-          <article class="web-card reveal">
-            <span>Online shops</span>
-            <h3>Product-focused layouts for selling clearly online.</h3>
-            <p>Homepage, product sections, CTA flow, content cards, and responsive structure.</p>
+          <article class="ui-card reveal">
+            <span>UX flow</span>
+            <strong>Simple steps for visitors to hire or contact.</strong>
+            <div class="flow-dots"><i></i><i></i><i></i></div>
           </article>
-          <article class="web-card reveal">
-            <span>UX/UI systems</span>
-            <h3>Interfaces that organize content and guide visitors smoothly.</h3>
-            <p>Wireframe thinking, visual hierarchy, sections, buttons, navigation, and interaction style.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="tools" class="section tools-section">
-        <div class="section-intro reveal">
-          <p class="eyebrow">Tools and skills</p>
-          <h2>Creative software and practical production skills.</h2>
-        </div>
-
-        <div class="tools-grid reveal">
-          <article><strong>Adobe Illustrator</strong><span>Vector design / branding</span></article>
-          <article><strong>Adobe Photoshop</strong><span>Campaigns / image design</span></article>
-          <article><strong>Adobe After Effects</strong><span>Motion graphics / titles</span></article>
-          <article><strong>Adobe Lightroom</strong><span>Photo color / editing</span></article>
-          <article><strong>CapCut</strong><span>Video edits / social reels</span></article>
-        </div>
-
-        <div class="skill-tags reveal">
-          <span>Graphic design</span>
-          <span>Web design</span>
-          <span>UX/UI design</span>
-          <span>Mini websites</span>
-          <span>Portfolio websites</span>
-          <span>Online shops</span>
-          <span>Motion graphics</span>
-          <span>Video editing</span>
-          <span>Social content</span>
         </div>
       </section>
 
       <section id="motion" class="section motion-section">
         <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Video / Motion</p>
-            <h2>5 reel spaces</h2>
-          </div>
-          <p>Ready for motion graphics, social edits, campaign videos, product reels, and title sequence work.</p>
+          <p class="eyebrow">Motion included</p>
+          <h2>Video and motion graphics spaces.</h2>
+          <p>5 motion reel spaces with animated play states and room for future MP4 embeds.</p>
         </div>
 
         <div class="video-strip">
@@ -275,38 +327,51 @@
 
       <section id="content" class="section content-section">
         <div class="section-heading reveal">
-          <div>
-            <p class="eyebrow">Content design</p>
-            <h2>10 content posts</h2>
-          </div>
-          <p>Campaign posts, editorial graphics, product promotions, and social visuals prepared for digital platforms.</p>
+          <p class="eyebrow">Content posts</p>
+          <h2>Social-ready content design.</h2>
+          <p>10 content spaces for campaigns, launches, product posts, fashion visuals, and promotional stories.</p>
         </div>
 
         <div class="content-grid">
           <button class="content-card reveal" type="button" data-image="./assets/content/post-1.jpg" data-caption="Explore Thailand campaign"><img src="./assets/content/post-1.jpg" alt="Explore Thailand content post" loading="lazy" /><span>Travel</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-2.jpg" data-caption="Hsu San fashion campaign"><img src="./assets/content/post-2.jpg" alt="Hsu San fashion content post" loading="lazy" /><span>Fashion</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-3.jpg" data-caption="Orange juice product campaign"><img src="./assets/content/post-3.jpg" alt="Orange juice content post" loading="lazy" /><span>Product</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-4.jpg" data-caption="Creative tools content"><img src="./assets/content/post-4.jpg" alt="Creative tools content post" loading="lazy" /><span>Creator</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-5.jpg" data-caption="Fashion editorial content"><img src="./assets/content/post-5.jpg" alt="Fashion editorial content post" loading="lazy" /><span>Editorial</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-6.jpg" data-caption="Design update content"><img src="./assets/content/post-6.jpg" alt="Design update content post" loading="lazy" /><span>Update</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-2.jpg" data-caption="Hsu San fashion campaign"><img src="./assets/content/post-2.jpg" alt="Fashion content post" loading="lazy" /><span>Fashion</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-3.jpg" data-caption="Orange juice product campaign"><img src="./assets/content/post-3.jpg" alt="Orange juice product post" loading="lazy" /><span>Product</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-4.jpg" data-caption="Creative tools content"><img src="./assets/content/post-4.jpg" alt="Creative tools post" loading="lazy" /><span>Creator</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-5.jpg" data-caption="Fashion editorial content"><img src="./assets/content/post-5.jpg" alt="Fashion editorial post" loading="lazy" /><span>Editorial</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-6.jpg" data-caption="Design update content"><img src="./assets/content/post-6.jpg" alt="Design update post" loading="lazy" /><span>Update</span></button>
           <button class="content-card reveal" type="button" data-image="./assets/content/post-7.jpg" data-caption="Seasonal greeting content"><img src="./assets/content/post-7.jpg" alt="Seasonal content post" loading="lazy" /><span>Seasonal</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-8.jpg" data-caption="Fashion update content"><img src="./assets/content/post-8.jpg" alt="Fashion update content post" loading="lazy" /><span>Fashion</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-9.jpg" data-caption="Travel campaign content"><img src="./assets/content/post-9.jpg" alt="Travel campaign content post" loading="lazy" /><span>Travel</span></button>
-          <button class="content-card reveal" type="button" data-image="./assets/content/post-10.jpg" data-caption="New post fashion content"><img src="./assets/content/post-10.jpg" alt="Fashion social content post" loading="lazy" /><span>Social</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-8.jpg" data-caption="Fashion update content"><img src="./assets/content/post-8.jpg" alt="Fashion update post" loading="lazy" /><span>Fashion</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-9.jpg" data-caption="Travel campaign content"><img src="./assets/content/post-9.jpg" alt="Travel campaign post" loading="lazy" /><span>Travel</span></button>
+          <button class="content-card reveal" type="button" data-image="./assets/content/post-10.jpg" data-caption="New post fashion content"><img src="./assets/content/post-10.jpg" alt="Fashion social post" loading="lazy" /><span>Social</span></button>
+        </div>
+      </section>
+
+      <section id="tools" class="section tools-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Tools and skills</p>
+          <h2>Creative toolkit for complete delivery.</h2>
+          <p>Design, web, UI, video, and motion skills in one professional portfolio.</p>
+        </div>
+
+        <div class="tools-grid reveal">
+          <article><strong>Adobe Illustrator</strong><span>Vector / brand visuals</span></article>
+          <article><strong>Adobe Photoshop</strong><span>Campaign / image design</span></article>
+          <article><strong>Adobe After Effects</strong><span>Motion / titles</span></article>
+          <article><strong>Adobe Lightroom</strong><span>Photo / color editing</span></article>
+          <article><strong>CapCut</strong><span>Video / social reels</span></article>
         </div>
       </section>
 
       <section id="contact" class="section contact-section">
-        <div class="contact-card reveal">
-          <p class="eyebrow">Let us build something global</p>
-          <h2>Ready for your next website, campaign, or creative launch.</h2>
+        <div class="hire-panel reveal">
+          <p class="eyebrow">Start a project</p>
+          <h2>Need a website, UI design, graphic campaign, or motion content?</h2>
           <p>
-            Contact me for graphic design, website design, UX/UI design, online
-            shop layouts, portfolio websites, content systems, and motion
-            graphics.
+            Send me your idea and I will help shape it into a clean, professional
+            digital experience.
           </p>
           <div class="contact-actions">
-            <a class="button button-primary" href="mailto:kaunghtetkyaw.n30511@gmail.com">Email me</a>
+            <a class="button button-primary" href="mailto:kaunghtetkyaw.n30511@gmail.com">Send email</a>
             <a class="button" href="./assets/KaungHtetKyaw_CV.pdf" download>Download CV</a>
           </div>
         </div>
@@ -324,9 +389,9 @@
     <footer class="site-footer">
       <a class="brand" href="#top" aria-label="Back to top">
         <span class="brand-mark">KHK</span>
-        <span class="brand-copy">Global Creative Portfolio</span>
+        <span class="brand-copy">UI / Web / Motion</span>
       </a>
-      <p>Graphic / Web / UX/UI / Motion</p>
+      <p>Marketplace-style portfolio</p>
       <p>&copy; <span data-year>2026</span> Kaung Htet Kyaw</p>
     </footer>
 
@@ -349,9 +414,9 @@
         <span class="video-play video-play-large" aria-hidden="true"></span>
       </div>
       <div class="reel-modal-copy">
-        <p class="eyebrow">Video showcase space</p>
+        <p class="eyebrow">Motion preview</p>
         <h3 data-reel-title>Motion reel</h3>
-        <p>This area is ready for a final video file or embed.</p>
+        <p>This area is ready for a final MP4 file or video embed.</p>
       </div>
     </dialog>
 
