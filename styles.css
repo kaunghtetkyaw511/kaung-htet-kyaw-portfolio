@@ -295,32 +295,6 @@ img {
   background: rgb(0 0 0 / 18%);
 }
 
-.service-search {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 8px;
-  max-width: 900px;
-  margin-top: 28px;
-  padding: 8px;
-  border: 2px solid white;
-  border-radius: 999px;
-  background: white;
-  box-shadow: none;
-}
-
-.service-search input {
-  min-width: 0;
-  min-height: 58px;
-  border: 0;
-  border-radius: 999px;
-  padding: 0 24px;
-  background: transparent;
-  color: var(--ink);
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  outline: 0;
-}
-
-.service-search button,
 .button {
   display: inline-flex;
   align-items: center;
@@ -341,10 +315,9 @@ img {
     color 180ms ease;
 }
 
-.service-search button,
 .button-primary {
   padding: 0 30px;
-  background: var(--ink);
+  background: var(--green);
   color: white;
 }
 
@@ -362,9 +335,7 @@ img {
 }
 
 .button:hover,
-.button:focus-visible,
-.service-search button:hover,
-.service-search button:focus-visible {
+.button:focus-visible {
   transform: translateY(-2px);
   background: var(--green-dark);
   color: white;
@@ -374,7 +345,7 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: clamp(42px, 7vw, 88px);
+  margin-top: clamp(26px, 4vw, 44px);
 }
 
 .quick-tags a {
@@ -1340,15 +1311,6 @@ img {
     border-radius: 24px;
   }
 
-  .service-search {
-    grid-template-columns: 1fr;
-    border-radius: 28px;
-  }
-
-  .service-search input {
-    min-height: 48px;
-  }
-
   .hero-profile-badge {
     right: clamp(20px, 6vw, 54px);
     bottom: 32px;
@@ -1422,22 +1384,9 @@ img {
     line-height: 1.62;
   }
 
-  .service-search {
-    margin-top: 22px;
-    padding: 7px;
-  }
-
-  .service-search input {
-    padding: 0 16px;
-  }
-
-  .service-search button {
-    min-height: 50px;
-  }
-
   .quick-tags {
     gap: 8px;
-    margin-top: 28px;
+    margin-top: 24px;
   }
 
   .quick-tags a {
