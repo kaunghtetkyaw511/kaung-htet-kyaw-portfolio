@@ -55,39 +55,8 @@
 
     <main id="main">
       <section id="top" class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow reveal">Available for freelance projects worldwide</p>
-          <h1 class="reveal">
-            Graphic designer for brands, campaigns, and social content.
-          </h1>
-          <p class="hero-summary reveal">
-            I create clear, polished visual designs for brands, campaign posts,
-            social media content, posters, banners, and digital promotions.
-            Web design, UX/UI, and motion graphics are supporting skills I can
-            add when a project needs a complete digital presentation.
-          </p>
-
-          <form class="service-search reveal" action="#services">
-            <label class="sr-only" for="project-search">Project type</label>
-            <input
-              id="project-search"
-              type="text"
-              value="I need graphic design, brand visuals, or social content"
-              readonly
-            />
-            <button type="submit">Explore services</button>
-          </form>
-
-          <div class="quick-tags reveal" aria-label="Popular services">
-            <span>Graphic design</span>
-            <span>Brand visuals</span>
-            <span>Social content</span>
-            <span>Motion graphics</span>
-          </div>
-        </div>
-
-        <aside class="talent-card reveal" aria-label="Designer profile card">
-          <div class="talent-cover">
+        <div class="hero-cover-card reveal" data-cover-video-slot>
+          <div class="hero-cover-media" aria-label="Cover photo area, ready for future video">
             <img
               class="cover-photo"
               src="./assets/hero-cover.jpg"
@@ -95,6 +64,45 @@
               width="1600"
               height="1200"
             />
+          </div>
+
+          <div class="hero-cover-content">
+            <p class="eyebrow">Graphic designer available worldwide</p>
+            <h1>
+              Graphic design for brands, campaigns, and social content.
+            </h1>
+            <p class="hero-summary">
+              I create clean visual designs for campaign posts, posters,
+              banners, brand graphics, and digital promotions. Web design,
+              UX/UI, and motion graphics are available as supporting skills
+              when the project needs a complete presentation.
+            </p>
+
+            <div class="hero-switch" aria-label="Service focus">
+              <a class="is-active" href="#work">Graphic design</a>
+              <a href="#ui-showcase">Web / UI support</a>
+            </div>
+
+            <form class="service-search" action="#services">
+              <label class="sr-only" for="project-search">Project type</label>
+              <input
+                id="project-search"
+                type="text"
+                value="Describe the design you need..."
+                readonly
+              />
+              <button type="submit">Search</button>
+            </form>
+
+            <div class="quick-tags" aria-label="Popular services">
+              <a href="#work">Graphic design <span aria-hidden="true">→</span></a>
+              <a href="#content">Social content <span aria-hidden="true">→</span></a>
+              <a href="#motion">Motion graphics <span aria-hidden="true">→</span></a>
+              <a href="#ui-showcase">Web / UI <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+
+          <aside class="hero-profile-badge" aria-label="Designer profile">
             <img
               class="profile-photo"
               src="./assets/profile.jpg"
@@ -102,31 +110,12 @@
               width="1100"
               height="1289"
             />
-            <span class="status-dot">Available now</span>
-          </div>
-          <div class="talent-info">
             <div>
               <h2>Kaung Htet Kyaw</h2>
               <p>Graphic Designer / Visual Designer</p>
             </div>
-            <strong>Main service: Graphic design and campaign visuals</strong>
-          </div>
-          <dl class="talent-stats">
-            <div><dt>Experience</dt><dd>3+ years</dd></div>
-            <div><dt>Location</dt><dd>Thailand</dd></div>
-            <div><dt>Delivery</dt><dd>Remote</dd></div>
-          </dl>
-        </aside>
-
-        <div class="floating-ui floating-ui-a reveal" aria-hidden="true">
-          <span>Brand Visual</span>
-          <strong>Campaign layout system</strong>
-          <i></i>
-        </div>
-        <div class="floating-ui floating-ui-b reveal" aria-hidden="true">
-          <span>Motion</span>
-          <strong>Animated social post</strong>
-          <i></i>
+            <span class="status-dot">Available now</span>
+          </aside>
         </div>
       </section>
 
