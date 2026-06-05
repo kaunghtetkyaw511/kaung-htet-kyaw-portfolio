@@ -618,7 +618,57 @@ img {
 }
 
 .section {
+  --section-accent: 20 168 0;
+  --section-line: rgb(24 24 24 / 3%);
+  --section-glass: rgb(255 255 255 / 58%);
+  position: relative;
+  overflow: hidden;
   padding: var(--section) var(--page);
+  isolation: isolate;
+}
+
+.section::before,
+.section::after {
+  position: absolute;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.section::before {
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--mesh-one-x, 12%) var(--mesh-one-y, 18%), rgb(var(--section-accent) / 12%), transparent 23rem),
+    radial-gradient(circle at var(--mesh-two-x, 86%) var(--mesh-two-y, 76%), var(--section-glass), transparent 22rem),
+    linear-gradient(120deg, transparent 0 42%, rgb(var(--section-accent) / 5%) 44%, transparent 48%),
+    repeating-linear-gradient(135deg, var(--section-line) 0 1px, transparent 1px 38px);
+  opacity: var(--section-pattern-opacity, 0.72);
+  transform: translate3d(-1.5%, 0, 0) scale(1.02);
+  animation: section-mesh-drift 18s ease-in-out infinite alternate;
+}
+
+.section::after {
+  top: var(--decor-top, 12%);
+  right: var(--decor-right, -9%);
+  width: clamp(180px, 22vw, 420px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(var(--section-accent) / 16%);
+  border-radius: 42%;
+  background:
+    radial-gradient(circle at 34% 28%, rgb(255 255 255 / 62%), transparent 18%),
+    radial-gradient(circle at 68% 70%, rgb(var(--section-accent) / 12%), transparent 42%),
+    rgb(255 255 255 / 16%);
+  box-shadow:
+    inset 0 0 42px rgb(255 255 255 / 28%),
+    0 22px 72px rgb(25 70 20 / 7%);
+  opacity: var(--decor-opacity, 0.52);
+  rotate: var(--decor-rotate, -8deg);
+  animation: section-orb-drift 13s ease-in-out infinite alternate;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading {
@@ -793,8 +843,32 @@ img {
   text-decoration: none;
 }
 
+.services-section {
+  --mesh-one-x: 8%;
+  --mesh-one-y: 12%;
+  --mesh-two-x: 78%;
+  --mesh-two-y: 18%;
+  --decor-right: 5%;
+  --decor-top: 8%;
+  background:
+    radial-gradient(circle at 84% 8%, rgb(20 168 0 / 9%), transparent 26rem),
+    linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(247 251 243 / 90%));
+}
+
 .about-section {
-  background: white;
+  --mesh-one-x: 7%;
+  --mesh-one-y: 58%;
+  --mesh-two-x: 88%;
+  --mesh-two-y: 20%;
+  --decor-right: auto;
+  --decor-top: 16%;
+  background:
+    radial-gradient(circle at 0% 44%, rgb(20 168 0 / 8%), transparent 24rem),
+    linear-gradient(180deg, rgb(255 255 255 / 98%), rgb(255 255 255 / 92%));
+}
+
+.about-section::after {
+  left: -8%;
 }
 
 .about-grid {
@@ -879,7 +953,29 @@ img {
 .process-section,
 .motion-section,
 .tools-section {
-  background: var(--cream-2);
+  --mesh-one-x: 78%;
+  --mesh-one-y: 18%;
+  --mesh-two-x: 18%;
+  --mesh-two-y: 82%;
+  --section-glass: rgb(255 255 255 / 46%);
+  --decor-top: 18%;
+  --decor-right: 7%;
+  background:
+    radial-gradient(circle at 10% 24%, rgb(255 255 255 / 72%), transparent 22rem),
+    radial-gradient(circle at 88% 82%, rgb(20 168 0 / 10%), transparent 28rem),
+    var(--cream-2);
+}
+
+.work-section {
+  --mesh-one-x: 88%;
+  --mesh-one-y: 16%;
+  --mesh-two-x: 8%;
+  --mesh-two-y: 66%;
+  --decor-top: 9%;
+  --decor-right: -6%;
+  background:
+    radial-gradient(circle at 90% 8%, rgb(20 168 0 / 10%), transparent 28rem),
+    linear-gradient(180deg, rgb(255 255 255 / 96%), rgb(247 251 243 / 94%));
 }
 
 .process-grid {
@@ -1144,7 +1240,15 @@ button.video-card {
 }
 
 .mini-web-section {
-  background: white;
+  --mesh-one-x: 12%;
+  --mesh-one-y: 22%;
+  --mesh-two-x: 84%;
+  --mesh-two-y: 78%;
+  --decor-top: 20%;
+  --decor-right: 3%;
+  background:
+    radial-gradient(circle at 18% 16%, rgb(20 168 0 / 7%), transparent 24rem),
+    linear-gradient(180deg, rgb(255 255 255 / 98%), rgb(246 250 242 / 94%));
 }
 
 .mini-web-grid {
@@ -1329,7 +1433,19 @@ button.video-card {
 }
 
 .content-section {
-  background: white;
+  --mesh-one-x: 84%;
+  --mesh-one-y: 24%;
+  --mesh-two-x: 10%;
+  --mesh-two-y: 82%;
+  --decor-right: auto;
+  --decor-top: 12%;
+  background:
+    radial-gradient(circle at 86% 14%, rgb(20 168 0 / 9%), transparent 25rem),
+    linear-gradient(180deg, rgb(255 255 255 / 98%), rgb(255 255 255 / 92%));
+}
+
+.content-section::after {
+  left: -7%;
 }
 
 .content-writing-grid {
@@ -1428,10 +1544,19 @@ button.video-card {
 }
 
 .contact-section {
+  --section-line: rgb(255 255 255 / 4%);
+  --section-glass: rgb(255 255 255 / 7%);
+  --section-pattern-opacity: 0.44;
+  --decor-opacity: 0.32;
+  --decor-top: 10%;
+  --decor-right: 4%;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.55fr);
   gap: clamp(28px, 5vw, 80px);
-  background: var(--ink);
+  background:
+    radial-gradient(circle at 82% 18%, rgb(20 168 0 / 16%), transparent 28rem),
+    radial-gradient(circle at 10% 86%, rgb(255 255 255 / 8%), transparent 22rem),
+    var(--ink);
   color: white;
 }
 
@@ -1768,6 +1893,27 @@ button.video-card {
   }
 }
 
+@keyframes section-mesh-drift {
+  50% {
+    background-position: 4% 0, -3% 5%, 18px 0, 32px 32px;
+  }
+
+  100% {
+    transform: translate3d(1.5%, -1%, 0) scale(1.04);
+  }
+}
+
+@keyframes section-orb-drift {
+  50% {
+    border-radius: 48%;
+    transform: translate3d(-26px, 18px, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(18px, -24px, 0) scale(0.96);
+  }
+}
+
 @keyframes cinematic-glow {
   100% {
     transform: translate3d(12%, -8%, 0) rotate(-7deg);
@@ -1989,6 +2135,11 @@ button.video-card {
 
   .hero-switch a {
     border-radius: 24px;
+  }
+
+  .section::after {
+    width: clamp(150px, 42vw, 260px);
+    opacity: 0.28;
   }
 
   .section-heading {
