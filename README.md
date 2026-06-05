@@ -1,7 +1,8 @@
-# Kaung Htet Kyaw Graphic Design Portfolio
+# Kaung Htet Kyaw Graphic Design And Content Portfolio
 
-An Upwork-inspired graphic design portfolio for global freelance clients, with
-supporting web design, UX/UI, content design, and motion graphics sections.
+A premium portfolio for global freelance clients, focused on graphic design and
+content writing. Mini website support and light video editing are included as
+secondary skills.
 
 ## GitHub Pages
 
