@@ -1,7 +1,7 @@
-# Kaung Htet Kyaw UI Portfolio
+# Kaung Htet Kyaw Graphic Design Portfolio
 
-An Upwork-inspired UI, web design, graphic design, and motion graphics
-portfolio for global freelance clients.
+An Upwork-inspired graphic design portfolio for global freelance clients, with
+supporting web design, UX/UI, content design, and motion graphics sections.
 
 ## GitHub Pages
 

@@ -12,9 +12,10 @@
   --page: clamp(18px, 4vw, 72px);
   --section: clamp(76px, 9vw, 130px);
   --radius: 28px;
+  --font-main: "DM Sans", system-ui, sans-serif;
   color: var(--ink);
   background: var(--cream);
-  font-family: "DM Sans", system-ui, sans-serif;
+  font-family: var(--font-main);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -120,18 +121,18 @@ img {
   background: var(--green);
   color: white;
   place-items: center;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .brand-copy {
   max-width: 128px;
   color: var(--muted);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   line-height: 1.25;
   text-transform: uppercase;
 }
@@ -145,10 +146,10 @@ img {
 .site-nav a,
 .header-cta {
   color: var(--muted);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -181,10 +182,10 @@ img {
 .eyebrow {
   margin: 0;
   color: var(--green-dark);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -213,26 +214,27 @@ img {
 .hero-copy {
   z-index: 1;
   align-self: center;
-  max-width: 980px;
+  max-width: 900px;
 }
 
 .hero h1 {
-  max-width: 980px;
+  max-width: 860px;
   margin: 18px 0 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(4.2rem, 9.6vw, 10.8rem);
-  font-weight: 700;
-  letter-spacing: -0.09em;
-  line-height: 0.86;
+  font-family: var(--font-main);
+  font-size: clamp(3.2rem, 6.4vw, 7.2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
 .hero-summary {
-  max-width: 710px;
-  margin: 28px 0 0;
+  max-width: 760px;
+  margin: 24px 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
-  line-height: 1.68;
+  font-size: clamp(1rem, 1.28vw, 1.18rem);
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 .service-search {
@@ -267,10 +269,10 @@ img {
   border: 0;
   border-radius: 999px;
   cursor: pointer;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   text-decoration: none;
   text-transform: uppercase;
   transition:
@@ -375,10 +377,10 @@ img {
   border-radius: 999px;
   background: var(--green);
   color: white;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -390,9 +392,10 @@ img {
 
 .talent-info h2 {
   margin: 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.6rem, 2.6vw, 2.45rem);
-  letter-spacing: -0.06em;
+  font-family: var(--font-main);
+  font-size: clamp(1.5rem, 2.2vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .talent-info p {
@@ -405,6 +408,8 @@ img {
   border-radius: 16px;
   background: var(--green-soft);
   color: var(--green-dark);
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 .talent-stats {
@@ -430,7 +435,7 @@ img {
 
 .talent-stats dd {
   margin: 6px 0 0;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .floating-ui {
@@ -461,15 +466,17 @@ img {
 
 .floating-ui span {
   color: var(--green-dark);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
 .floating-ui strong {
   font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
 }
 
 .floating-ui i {
@@ -506,10 +513,10 @@ img {
 .logo-track span {
   padding: 18px 28px;
   color: rgb(255 255 255 / 84%);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -519,25 +526,27 @@ img {
 
 .section-heading {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.42fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.48fr);
   align-items: end;
-  gap: clamp(24px, 5vw, 72px);
-  margin-bottom: clamp(38px, 6vw, 72px);
+  gap: clamp(24px, 4vw, 56px);
+  margin-bottom: clamp(34px, 5vw, 64px);
 }
 
 .section-heading h2 {
   margin: 12px 0 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.7rem, 6vw, 7rem);
-  font-weight: 700;
-  letter-spacing: -0.08em;
-  line-height: 0.93;
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 4.2vw, 4.9rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .section-heading p:last-child {
   margin: 0;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .market-grid {
@@ -586,10 +595,10 @@ img {
 .video-card b,
 .contact-links span {
   color: var(--green-dark);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -598,17 +607,20 @@ img {
 }
 
 .market-card h3 {
-  margin: 44px 0 14px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.55rem, 2.2vw, 2.35rem);
-  letter-spacing: -0.05em;
-  line-height: 1.05;
+  margin: 38px 0 14px;
+  font-family: var(--font-main);
+  font-size: clamp(1.35rem, 1.7vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
+  text-wrap: balance;
 }
 
 .market-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .market-card-green p {
@@ -618,7 +630,7 @@ img {
 .market-card a {
   margin-top: auto;
   color: inherit;
-  font-weight: 800;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -647,17 +659,19 @@ img {
 
 .about-panel h3 {
   margin: 0 0 18px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.9rem, 3.2vw, 3.4rem);
-  letter-spacing: -0.06em;
-  line-height: 1;
+  font-family: var(--font-main);
+  font-size: clamp(1.55rem, 2.6vw, 2.65rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
 }
 
 .about-panel p {
   margin: 0;
   color: var(--muted);
   font-size: clamp(1rem, 1.25vw, 1.18rem);
-  line-height: 1.72;
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 .about-panel p + p {
@@ -682,17 +696,17 @@ img {
 
 .about-facts dt {
   color: var(--green-dark);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .about-facts dd {
   margin: 0;
   color: var(--ink);
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .process-section,
@@ -712,16 +726,19 @@ img {
 }
 
 .process-card h3 {
-  margin: 72px 0 10px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.45rem, 2vw, 2.2rem);
-  letter-spacing: -0.05em;
+  margin: 64px 0 10px;
+  font-family: var(--font-main);
+  font-size: clamp(1.3rem, 1.7vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.18;
 }
 
 .process-card p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .portfolio-grid,
@@ -785,10 +802,10 @@ img {
   border-radius: 999px;
   background: rgb(255 255 255 / 90%);
   color: var(--green-dark);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;
   backdrop-filter: blur(12px);
@@ -848,16 +865,20 @@ img {
 
 .mock-hero strong,
 .ui-card strong {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.35rem, 2vw, 2.2rem);
-  letter-spacing: -0.05em;
-  line-height: 1.08;
+  font-family: var(--font-main);
+  font-size: clamp(1.25rem, 1.7vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-wrap: balance;
 }
 
 .mock-hero p {
   max-width: 420px;
   margin: 0;
   color: var(--muted);
+  line-height: 1.65;
+  text-wrap: pretty;
 }
 
 .mini-product,
@@ -927,9 +948,10 @@ img {
 }
 
 .video-card strong {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: -0.04em;
+  font-family: var(--font-main);
+  font-size: 1.18rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .video-play {
@@ -971,9 +993,10 @@ img {
 
 .tools-grid strong {
   align-self: end;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.28rem;
-  letter-spacing: -0.04em;
+  font-family: var(--font-main);
+  font-size: 1.16rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .contact-section {
@@ -995,17 +1018,20 @@ img {
 .hire-panel h2 {
   max-width: 860px;
   margin: 18px 0 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.8rem, 6vw, 7rem);
-  letter-spacing: -0.08em;
-  line-height: 0.92;
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 4.2vw, 4.8rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 .hire-panel p:not(.eyebrow) {
   max-width: 650px;
   color: rgb(255 255 255 / 72%);
-  font-size: clamp(1.05rem, 1.45vw, 1.25rem);
-  line-height: 1.7;
+  font-size: clamp(1rem, 1.25vw, 1.16rem);
+  line-height: 1.75;
+  text-wrap: pretty;
 }
 
 .contact-actions {
@@ -1033,6 +1059,7 @@ img {
 
 .contact-links strong {
   overflow-wrap: anywhere;
+  font-weight: 500;
 }
 
 .site-footer {
@@ -1048,10 +1075,10 @@ img {
 .site-footer p {
   margin: 0;
   color: rgb(255 255 255 / 62%);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -1095,10 +1122,10 @@ img {
   background: transparent;
   color: white;
   cursor: pointer;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -1121,10 +1148,10 @@ img {
 .lightbox > p {
   margin: 18px var(--page) 24px;
   color: rgb(255 255 255 / 68%);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: var(--font-main);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -1165,10 +1192,11 @@ img {
 
 .reel-modal-copy h3 {
   margin: 16px 0;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2.6rem, 5vw, 5.5rem);
-  letter-spacing: -0.07em;
-  line-height: 0.95;
+  font-family: var(--font-main);
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 .reel-modal-copy p:last-child {
@@ -1335,7 +1363,7 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(3.4rem, 14vw, 7rem);
+    font-size: clamp(2.8rem, 11vw, 5.4rem);
   }
 
   .service-search {
