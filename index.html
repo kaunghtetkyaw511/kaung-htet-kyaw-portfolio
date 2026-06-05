@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=graphic-content-20260606" />
+    <link rel="stylesheet" href="styles.css?v=remove-current-images-20260606" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -56,14 +56,12 @@
     <main id="main">
       <section id="top" class="hero">
         <div class="hero-cover-card reveal" data-cover-video-slot>
-          <div class="hero-cover-media" aria-label="Cover photo area, ready for future video">
-            <img
-              class="cover-photo"
-              src="./assets/hero-cover.jpg"
-              alt="Portfolio cover artwork"
-              width="1600"
-              height="1200"
-            />
+          <div class="hero-visual-field" aria-hidden="true">
+            <span class="hero-orb hero-orb-one"></span>
+            <span class="hero-orb hero-orb-two"></span>
+            <span class="hero-orb hero-orb-three"></span>
+            <span class="hero-line hero-line-one"></span>
+            <span class="hero-line hero-line-two"></span>
           </div>
 
           <div class="hero-cover-content">
@@ -91,21 +89,6 @@
               <a href="#motion">Video editing <span aria-hidden="true">→</span></a>
             </div>
           </div>
-
-          <aside class="hero-profile-badge" aria-label="Designer profile">
-            <img
-              class="profile-photo"
-              src="./assets/profile.jpg"
-              alt="Portrait of Kaung Htet Kyaw"
-              width="1100"
-              height="1289"
-            />
-            <div>
-              <h2>Kaung Htet Kyaw</h2>
-              <p>Graphic Designer / Content Writer</p>
-            </div>
-            <span class="status-dot">Available now</span>
-          </aside>
         </div>
       </section>
 
@@ -239,25 +222,25 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Portfolio marketplace</p>
           <h2>Selected graphic design work.</h2>
-          <p>15 clickable projects. Open any design in full size and return with the back button.</p>
+          <p>15 graphic design slots are ready. Current images are removed and can be replaced with new work later.</p>
         </div>
 
         <div class="portfolio-grid">
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-1.jpg" data-caption="The Century / Property campaign"><img src="./assets/portfolio/graphic-1.jpg" alt="The Century property campaign" loading="lazy" /><span>Property campaign</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-2.jpg" data-caption="Air ticket and hotel booking campaign"><img src="./assets/portfolio/graphic-2.jpg" alt="Travel booking campaign" loading="lazy" /><span>Travel booking</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-3.jpg" data-caption="Study in Europe campaign"><img src="./assets/portfolio/graphic-3.jpg" alt="Study in Europe campaign" loading="lazy" /><span>Education</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-4.jpg" data-caption="Rewards campaign"><img src="./assets/portfolio/graphic-4.jpg" alt="Rewards campaign" loading="lazy" /><span>Rewards</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-5.jpg" data-caption="Drive with confidence campaign"><img src="./assets/portfolio/graphic-5.jpg" alt="Automotive campaign" loading="lazy" /><span>Automotive</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-6.jpg" data-caption="Travel booking social design"><img src="./assets/portfolio/graphic-6.jpg" alt="Travel service campaign" loading="lazy" /><span>Travel service</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-7.jpg" data-caption="Visa extension campaign"><img src="./assets/portfolio/graphic-7.jpg" alt="Visa extension campaign" loading="lazy" /><span>Visa service</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-8.jpg" data-caption="Car rental campaign"><img src="./assets/portfolio/graphic-8.jpg" alt="Car rental campaign" loading="lazy" /><span>Car rental</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-9.jpg" data-caption="Study in Georgia campaign"><img src="./assets/portfolio/graphic-9.jpg" alt="Study in Georgia campaign" loading="lazy" /><span>Study abroad</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-10.jpg" data-caption="Travel payment campaign"><img src="./assets/portfolio/graphic-10.jpg" alt="Travel payment campaign" loading="lazy" /><span>Payment post</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-11.jpg" data-caption="Everyday essentials promotion"><img src="./assets/portfolio/graphic-11.jpg" alt="Retail promotion campaign" loading="lazy" /><span>Retail promo</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-12.jpg" data-caption="Condo sales launch"><img src="./assets/portfolio/graphic-12.jpg" alt="Condo sales launch" loading="lazy" /><span>Property launch</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-13.jpg" data-caption="Good Choice brand identity"><img src="./assets/portfolio/graphic-13.jpg" alt="Good Choice brand identity" loading="lazy" /><span>Brand identity</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-14.jpg" data-caption="Hsu San fashion identity"><img src="./assets/portfolio/graphic-14.jpg" alt="Fashion identity" loading="lazy" /><span>Fashion identity</span></button>
-          <button class="work-card reveal" type="button" data-image="./assets/portfolio/graphic-15.jpg" data-caption="Thae Thae brand identity"><img src="./assets/portfolio/graphic-15.jpg" alt="Brand system" loading="lazy" /><span>Brand system</span></button>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-1"><span>01</span><strong>Property Campaign</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-2"><span>02</span><strong>Travel Booking</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-3"><span>03</span><strong>Education</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-4"><span>04</span><strong>Rewards</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-5"><span>05</span><strong>Automotive</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-6"><span>06</span><strong>Travel Service</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-7"><span>07</span><strong>Visa Service</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-8"><span>08</span><strong>Car Rental</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-9"><span>09</span><strong>Study Abroad</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-10"><span>10</span><strong>Payment Post</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-11"><span>11</span><strong>Retail Promo</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-12"><span>12</span><strong>Property Launch</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-13"><span>13</span><strong>Brand Identity</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-14"><span>14</span><strong>Fashion Identity</strong><small>Image slot ready</small></article>
+          <article class="work-card work-placeholder reveal" data-image-slot="graphic-15"><span>15</span><strong>Brand System</strong><small>Image slot ready</small></article>
         </div>
       </section>
 
@@ -300,9 +283,9 @@
         </div>
 
         <div class="video-strip">
-          <button class="video-card reveal" type="button" data-reel="./assets/video/reel-1.jpg" data-title="Social motion reel"><img src="./assets/video/reel-1.jpg" alt="Social motion reel preview" loading="lazy" /><span class="video-play" aria-hidden="true"></span><div><b>01 / Social</b><strong>Motion Reel</strong></div></button>
-          <button class="video-card reveal" type="button" data-reel="./assets/video/reel-2.jpg" data-title="Brand story reel"><img src="./assets/video/reel-2.jpg" alt="Brand story reel preview" loading="lazy" /><span class="video-play" aria-hidden="true"></span><div><b>02 / Brand</b><strong>Story Reel</strong></div></button>
-          <button class="video-card reveal" type="button" data-reel="./assets/video/reel-3.jpg" data-title="Campaign edit"><img src="./assets/video/reel-3.jpg" alt="Campaign edit preview" loading="lazy" /><span class="video-play" aria-hidden="true"></span><div><b>03 / Campaign</b><strong>Video Edit</strong></div></button>
+          <article class="video-card video-placeholder reveal" data-video-slot="video-1"><span class="video-play" aria-hidden="true"></span><div><b>01 / Social</b><strong>Motion Reel</strong><small>Video slot ready</small></div></article>
+          <article class="video-card video-placeholder reveal" data-video-slot="video-2"><span class="video-play" aria-hidden="true"></span><div><b>02 / Brand</b><strong>Story Reel</strong><small>Video slot ready</small></div></article>
+          <article class="video-card video-placeholder reveal" data-video-slot="video-3"><span class="video-play" aria-hidden="true"></span><div><b>03 / Campaign</b><strong>Video Edit</strong><small>Video slot ready</small></div></article>
         </div>
       </section>
 
@@ -340,7 +323,7 @@
           <article><strong>Content Writing</strong><span>Copy / caption / CTA</span></article>
           <article><strong>Mini Website Basics</strong><span>Simple pages / portfolio</span></article>
           <article><strong>Adobe After Effects</strong><span>Motion / titles</span></article>
-          <article><strong>Adobe Lightroom</strong><span>Photo / color editing</span></article>
+          <article><strong>Adobe Lightroom</strong><span>Color correction</span></article>
           <article><strong>CapCut</strong><span>Video / social reels</span></article>
         </div>
       </section>
@@ -362,7 +345,7 @@
         <div class="contact-links reveal">
           <a href="tel:+66655019936"><span>Phone</span><strong>+66 655 019 936</strong></a>
           <a href="mailto:kaunghtetkyaw.n30511@gmail.com"><span>Gmail</span><strong>kaunghtetkyaw.n30511@gmail.com</strong></a>
-          <a href="https://www.facebook.com/share/1GNkG8WGLi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Open profile</strong></a>
+          <a href="https://www.facebook.com/share/1GNkG8WGLi/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"><span>Facebook</span><strong>Open Facebook</strong></a>
           <a href="https://line.me/ti/p/UfKE-9zLD5" target="_blank" rel="noopener noreferrer"><span>LINE</span><strong>Start chat</strong></a>
           <a href="https://wa.me/66655019936" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><strong>Start chat</strong></a>
         </div>
@@ -428,6 +411,6 @@
       </article>
     </dialog>
 
-    <script src="script.js?v=graphic-content-20260606"></script>
+    <script src="script.js?v=remove-current-images-20260606"></script>
   </body>
 </html>

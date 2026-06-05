@@ -158,7 +158,7 @@ const contentSamples = {
       "CTA: Planning to visit Thailand? Contact us today and start your journey with confidence.",
     ],
     direction:
-      "Use a warm travel photo, clean itinerary blocks, soft blue/green accents, and a clear contact button.",
+      "Use a warm travel visual, clean itinerary blocks, soft blue/green accents, and a clear contact button.",
   },
   "visa-flight-hotel": {
     category: "02 / Travel Agency Content",
