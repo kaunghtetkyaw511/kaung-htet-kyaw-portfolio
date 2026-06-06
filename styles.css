@@ -337,6 +337,179 @@ img {
   transform: none;
 }
 
+.profile-motion {
+  position: absolute;
+  z-index: 2;
+  top: 13%;
+  right: 2.5%;
+  width: 39%;
+  aspect-ratio: 0.78;
+  pointer-events: none;
+}
+
+.profile-motion::before {
+  position: absolute;
+  inset: 18% 8% 10% 14%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(255 255 255 / 12%), transparent 68%);
+  content: "";
+  filter: blur(10px);
+  animation: profile-glow-pulse 7s ease-in-out infinite;
+}
+
+.profile-ring {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  opacity: 0.72;
+  will-change: transform;
+}
+
+.profile-ring::before {
+  position: absolute;
+  top: 7%;
+  left: 23%;
+  width: clamp(5px, 0.55vw, 9px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 82%);
+  box-shadow:
+    0 0 0 5px rgb(255 255 255 / 10%),
+    0 0 24px rgb(255 255 255 / 48%);
+  content: "";
+}
+
+.profile-ring-one {
+  inset: 0 4% 2% 0;
+  border: 1px solid rgb(255 255 255 / 34%);
+  box-shadow:
+    inset 0 0 42px rgb(255 255 255 / 8%),
+    0 0 48px rgb(185 145 104 / 8%);
+  animation: profile-ring-rotate 22s linear infinite;
+}
+
+.profile-ring-two {
+  inset: 10% 13% 13% 8%;
+  border: 1px dashed rgb(201 168 133 / 52%);
+  animation: profile-ring-reverse 18s linear infinite;
+}
+
+.profile-ring-two::before {
+  top: auto;
+  right: 12%;
+  bottom: 9%;
+  left: auto;
+  background: rgb(211 176 139 / 92%);
+}
+
+.profile-ring-three {
+  inset: 22% 23% 24% 18%;
+  border: 1px solid rgb(255 255 255 / 28%);
+  background: rgb(255 255 255 / 3%);
+  box-shadow: inset 0 0 28px rgb(255 255 255 / 6%);
+  animation: profile-ring-breathe 8s ease-in-out infinite;
+}
+
+.profile-ring-three::before {
+  top: 18%;
+  right: 2%;
+  left: auto;
+  width: clamp(4px, 0.45vw, 7px);
+}
+
+.hero-action-dock {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  max-width: calc(100% - (var(--page) * 2));
+  gap: 7px;
+  margin: -88px 0 22px clamp(20px, 4vw, 62px);
+  padding: 8px;
+  border: 1px solid rgb(255 255 255 / 58%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 62%);
+  box-shadow:
+    0 18px 52px rgb(40 28 20 / 18%),
+    inset 0 1px 0 rgb(255 255 255 / 72%);
+  backdrop-filter: blur(22px) saturate(1.25);
+  animation: hero-dock-float 7s ease-in-out infinite;
+}
+
+.hero-action-label {
+  padding: 0 12px;
+  color: rgb(24 24 24 / 62%);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-action-dock a {
+  position: relative;
+  min-width: 126px;
+  padding: 12px 18px;
+  overflow: hidden;
+  border: 1px solid rgb(24 24 24 / 10%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 52%);
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-action-dock a::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 28%, rgb(255 255 255 / 68%) 48%, transparent 68%);
+  content: "";
+  transform: translateX(-130%);
+  animation: action-button-shine 8s ease-in-out infinite;
+}
+
+.hero-action-dock a:nth-of-type(2)::before {
+  animation-delay: -2s;
+}
+
+.hero-action-dock a:nth-of-type(3)::before {
+  animation-delay: -4s;
+}
+
+.hero-action-dock a:nth-of-type(4)::before {
+  animation-delay: -6s;
+}
+
+.hero-action-dock a.is-primary {
+  border-color: rgb(20 168 0 / 74%);
+  background: rgb(20 168 0 / 88%);
+  color: white;
+  box-shadow: 0 8px 24px rgb(20 168 0 / 20%);
+}
+
+.hero-action-dock a:hover,
+.hero-action-dock a:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgb(20 168 0 / 38%);
+  box-shadow: 0 10px 24px rgb(25 70 20 / 12%);
+  color: var(--green-dark);
+}
+
+.hero-action-dock a.is-primary:hover,
+.hero-action-dock a.is-primary:focus-visible {
+  background: var(--green-dark);
+  color: white;
+}
+
 .hero-visual-field,
 .hero-visual-field::before,
 .hero-visual-field::after {
@@ -1864,6 +2037,50 @@ button.video-card {
   }
 }
 
+@keyframes profile-glow-pulse {
+  50% {
+    opacity: 0.44;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes profile-ring-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes profile-ring-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes profile-ring-breathe {
+  50% {
+    opacity: 0.4;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hero-dock-float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes action-button-shine {
+  0%,
+  65% {
+    transform: translateX(-130%);
+  }
+
+  84%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
 @keyframes section-mesh-drift {
   50% {
     background-position: 4% 0, -3% 5%, 18px 0, 32px 32px;
@@ -1979,6 +2196,20 @@ button.video-card {
     min-height: 0;
   }
 
+  .hero-action-dock {
+    max-width: calc(100% - 48px);
+    margin-left: 24px;
+  }
+
+  .hero-action-label {
+    display: none;
+  }
+
+  .hero-action-dock a {
+    min-width: 112px;
+    padding-inline: 14px;
+  }
+
   .market-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2085,6 +2316,29 @@ button.video-card {
     min-height: 0;
   }
 
+  .profile-motion {
+    top: 14%;
+    right: 2%;
+    width: 41%;
+  }
+
+  .hero-action-dock {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: none;
+    margin: 14px 0 0;
+    border-color: rgb(20 168 0 / 14%);
+    border-radius: 24px;
+    background: rgb(255 255 255 / 76%);
+    animation: none;
+  }
+
+  .hero-action-dock a {
+    min-width: 0;
+    padding: 11px 12px;
+  }
+
   .hero-cover-content {
     min-height: inherit;
     padding: 42px clamp(24px, 6vw, 54px);
@@ -2174,6 +2428,25 @@ button.video-card {
   .hero-cover-card {
     min-height: 0;
     border-radius: 28px;
+  }
+
+  .profile-motion {
+    top: 13%;
+    right: 1%;
+    width: 42%;
+  }
+
+  .profile-ring {
+    opacity: 0.56;
+  }
+
+  .hero-action-dock {
+    border-radius: 20px;
+  }
+
+  .hero-action-dock a {
+    padding: 10px 8px;
+    font-size: 0.7rem;
   }
 
   .hero-cover-content {
