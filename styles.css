@@ -296,7 +296,8 @@ img {
 
 .hero-cover-card {
   position: relative;
-  min-height: clamp(680px, 78vh, 880px);
+  min-height: 0;
+  aspect-ratio: 1448 / 1086;
   overflow: hidden;
   border-radius: clamp(24px, 4vw, 44px);
   background:
@@ -308,18 +309,7 @@ img {
 }
 
 .hero-cover-card::before {
-  position: absolute;
-  z-index: 1;
-  inset: -35%;
-  background:
-    linear-gradient(115deg, transparent 18%, rgb(255 255 255 / 28%) 45%, transparent 62%),
-    radial-gradient(circle at 78% 20%, rgb(20 168 0 / 22%), transparent 24rem);
-  content: "";
-  mix-blend-mode: screen;
-  opacity: 0.42;
-  pointer-events: none;
-  transform: translate3d(-18%, 8%, 0) rotate(8deg);
-  animation: cinematic-glow 14s ease-in-out infinite alternate;
+  display: none;
 }
 
 .hero-cover-media,
@@ -334,25 +324,17 @@ img {
 }
 
 .hero-cover-media::before {
-  position: absolute;
-  inset: 0;
-  background-image: url("./assets/portfolio-ui-design/cover-photo.png");
-  background-position: center;
-  background-size: cover;
-  content: "";
-  filter: blur(28px) saturate(1.1) brightness(0.72);
-  opacity: 0.72;
-  transform: scale(1.1);
+  display: none;
 }
 
 .cover-photo {
   z-index: 1;
   width: 100%;
   height: 100%;
-  filter: saturate(0.96) brightness(0.82);
+  filter: none;
   object-fit: contain;
   object-position: center;
-  transform: translate3d(0, calc(var(--hero-shift, 0px) * -0.08), 0);
+  transform: none;
 }
 
 .hero-visual-field,
@@ -363,11 +345,7 @@ img {
 }
 
 .hero-visual-field {
-  z-index: 1;
-  overflow: hidden;
-  background:
-    linear-gradient(90deg, rgb(0 0 0 / 72%) 0%, rgb(0 0 0 / 36%) 42%, rgb(0 0 0 / 8%) 100%),
-    linear-gradient(180deg, rgb(0 0 0 / 8%) 0%, rgb(0 0 0 / 36%) 100%);
+  display: none;
 }
 
 .hero-visual-field::before {
@@ -452,14 +430,7 @@ img {
 }
 
 .hero-cover-content {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  align-content: center;
-  max-width: 1020px;
-  min-height: inherit;
-  padding: clamp(44px, 7vw, 96px);
-  color: white;
+  display: none;
 }
 
 .hero .eyebrow {
@@ -2005,7 +1976,7 @@ button.video-card {
   }
 
   .hero-cover-card {
-    min-height: clamp(660px, 74vh, 820px);
+    min-height: 0;
   }
 
   .market-grid {
@@ -2111,7 +2082,7 @@ button.video-card {
   }
 
   .hero-cover-card {
-    min-height: 760px;
+    min-height: 0;
   }
 
   .hero-cover-content {
@@ -2201,7 +2172,7 @@ button.video-card {
   }
 
   .hero-cover-card {
-    min-height: 720px;
+    min-height: 0;
     border-radius: 28px;
   }
 
