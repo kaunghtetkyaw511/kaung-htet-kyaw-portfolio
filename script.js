@@ -5,7 +5,7 @@ const body = document.body;
 const setMenuOpen = (isOpen) => {
   navToggle?.setAttribute("aria-expanded", String(isOpen));
   siteNav?.classList.toggle("is-open", isOpen);
-  body.classList.toggle("modal-open", isOpen);
+  body.classList.toggle("menu-open", isOpen);
 };
 
 navToggle?.addEventListener("click", () => {
@@ -85,7 +85,10 @@ const closeDialog = (dialog) => {
     dialog?.removeAttribute("open");
   }
 
-  body.classList.remove("modal-open");
+  if (![lightbox, reelModal, contentModal].some(isDialogOpen)) {
+    body.classList.remove("modal-open");
+  }
+
   lastFocusedElement?.focus();
 };
 
