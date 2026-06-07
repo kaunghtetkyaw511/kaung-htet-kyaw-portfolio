@@ -111,16 +111,43 @@ lightbox?.addEventListener("click", (event) => {
 });
 
 const reelModal = document.querySelector("[data-reel-modal]");
+const reelStage = document.querySelector(".reel-stage");
 const reelImage = document.querySelector("[data-reel-image]");
 const reelTitle = document.querySelector("[data-reel-title]");
+const reelSummary = document.querySelector("[data-reel-summary]");
 const reelClose = document.querySelector("[data-reel-close]");
 
 document.querySelectorAll("[data-reel]").forEach((button) => {
   button.addEventListener("click", () => {
     lastFocusedElement = button;
+    reelStage?.classList.remove("is-placeholder");
     reelImage.src = button.dataset.reel;
     reelImage.alt = button.querySelector("img")?.alt ?? "";
     reelTitle.textContent = button.dataset.title ?? "Motion reel";
+    if (reelSummary) {
+      reelSummary.textContent =
+        button.dataset.reelSummary ??
+        "This area is ready for a final MP4 file or video embed.";
+    }
+    openDialog(reelModal);
+  });
+});
+
+document.querySelectorAll("[data-video-slot]").forEach((button) => {
+  button.addEventListener("click", () => {
+    lastFocusedElement = button;
+    reelStage?.classList.add("is-placeholder");
+    reelImage.removeAttribute("src");
+    reelImage.alt = "";
+    reelTitle.textContent =
+      button.dataset.title ??
+      button.querySelector("strong")?.textContent ??
+      "Motion reel";
+    if (reelSummary) {
+      reelSummary.textContent =
+        button.dataset.reelSummary ??
+        "This video slot is ready for a final MP4 file, reel preview, or embedded video.";
+    }
     openDialog(reelModal);
   });
 });
