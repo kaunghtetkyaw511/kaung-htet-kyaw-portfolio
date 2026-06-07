@@ -1055,6 +1055,10 @@ main,
     rgb(255 255 255 / 72%);
 }
 
+.about-grid {
+  align-items: start;
+}
+
 .mini-web-section {
   background:
     radial-gradient(circle at 8% 18%, rgb(20 168 0 / 16%), transparent 20rem),
@@ -1117,6 +1121,7 @@ main,
 
 .about-panel {
   padding: clamp(20px, 3vw, 30px);
+  align-self: start;
 }
 
 .about-panel h3 {
@@ -1133,6 +1138,7 @@ main,
 
 .about-facts {
   margin: 0;
+  align-self: start;
 }
 
 .about-facts div {
@@ -1189,6 +1195,10 @@ main,
   background: white;
   box-shadow: 0 12px 32px rgb(25 70 20 / 8%);
   animation: box-drift 8s ease-in-out infinite alternate;
+}
+
+.portfolio-grid .work-card {
+  animation: portfolio-card-breathe 8s ease-in-out infinite alternate;
 }
 
 .logo-grid .work-card:nth-child(2),
@@ -2088,6 +2098,13 @@ button.video-card {
   }
 }
 
+@keyframes portfolio-card-breathe {
+  50% {
+    border-color: rgb(20 168 0 / 22%);
+    box-shadow: 0 16px 42px rgb(25 70 20 / 12%);
+  }
+}
+
 @keyframes dock-float {
   50% {
     transform: translate3d(0, -4px, 0);
@@ -2430,7 +2447,7 @@ button.video-card {
   }
 
   .portfolio-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .logo-grid {
@@ -2491,7 +2508,7 @@ button.video-card {
 
 @media (min-width: 1181px) {
   .portfolio-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
