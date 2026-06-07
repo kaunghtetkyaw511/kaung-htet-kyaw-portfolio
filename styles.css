@@ -898,6 +898,99 @@ main,
   padding: clamp(18px, 2.4vw, 24px);
 }
 
+.tools-grid article {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 24px);
+  min-height: 118px;
+}
+
+.tools-grid article > div {
+  display: grid;
+  gap: 9px;
+  min-width: 0;
+}
+
+.tools-grid article strong {
+  display: block;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 2.8vw, 1.24rem);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+}
+
+.tools-grid article div span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.tool-logo {
+  position: relative;
+  display: grid;
+  flex: 0 0 auto;
+  width: clamp(52px, 12vw, 66px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 52%);
+  border-radius: 18px;
+  color: white;
+  font-size: clamp(1rem, 3.5vw, 1.22rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  place-items: center;
+  text-transform: none;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 24%),
+    0 14px 34px rgb(20 168 0 / 12%);
+  animation: tool-logo-float 5.6s ease-in-out infinite alternate;
+}
+
+.tool-logo::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(125deg, transparent 0 34%, rgb(255 255 255 / 30%) 48%, transparent 62%);
+  content: "";
+  transform: translateX(-85%);
+  animation: app-logo-sheen 4.8s var(--ease-out) infinite;
+}
+
+.tool-logo-ai {
+  background: linear-gradient(145deg, #2d1600, #ff9a00);
+  color: #331800;
+}
+
+.tool-logo-ps {
+  background: linear-gradient(145deg, #001d34, #31a8ff);
+}
+
+.tool-logo-ae {
+  background: linear-gradient(145deg, #12004a, #9999ff);
+}
+
+.tool-logo-lr {
+  background: linear-gradient(145deg, #001e2b, #31a8ff);
+}
+
+.tool-logo-cc {
+  background: linear-gradient(145deg, #050505, #00f2ea 58%, #ff0050);
+}
+
+.tool-logo-copy {
+  background: linear-gradient(145deg, #0f2d16, #14a800);
+}
+
+.tool-logo-web {
+  background: linear-gradient(145deg, #121212, #d6ffd0);
+  color: #162014;
+}
+
 .market-card-green {
   background:
     radial-gradient(circle at 82% 16%, rgb(255 255 255 / 20%), transparent 14rem),
@@ -908,7 +1001,6 @@ main,
 .market-card span,
 .process-card span,
 .mini-web-card span,
-.tools-grid span,
 .writing-meta,
 .portfolio-subhead span,
 .contact-links span,
@@ -2125,6 +2217,26 @@ button.video-card {
   }
 }
 
+@keyframes tool-logo-float {
+  50% {
+    transform: translate3d(0, -4px, 0) rotate(-2deg);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 28%),
+      0 18px 38px rgb(20 168 0 / 16%);
+  }
+}
+
+@keyframes app-logo-sheen {
+  0%,
+  55% {
+    transform: translateX(-85%);
+  }
+
+  100% {
+    transform: translateX(85%);
+  }
+}
+
 @keyframes profile-ring-rotate {
   to {
     transform: rotate(360deg);
@@ -2304,7 +2416,7 @@ button.video-card {
   }
 
   .market-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 
   .about-grid,
@@ -2346,7 +2458,7 @@ button.video-card {
   }
 
   .tools-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
 
   .site-footer {
