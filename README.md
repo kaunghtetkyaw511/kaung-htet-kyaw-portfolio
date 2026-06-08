@@ -1,8 +1,14 @@
 # Kaung Htet Kyaw Graphic Design And Content Portfolio
 
 A premium portfolio for global freelance clients, focused on graphic design and
-content writing. Mini website support and light video editing are included as
-secondary skills.
+content writing. Two interactive mini website projects, ClientFlow and
+LumaMart, demonstrate responsive dashboard and online shop work alongside
+light video editing support.
+
+## Live Mini Websites
+
+- [ClientFlow](https://kaunghtetkyaw511.github.io/ui-portfolio/web-apps/clientflow/)
+- [LumaMart](https://kaunghtetkyaw511.github.io/ui-portfolio/web-apps/lumamart/)
 
 ## GitHub Pages
 

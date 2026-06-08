@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LumaMart - Online Shop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="shop-shell">
+      <header class="store-header">
+        <a class="brand" href="#catalog" aria-label="LumaMart home">
+          <span class="brand-mark">LM</span>
+          <span>
+            <strong>LumaMart</strong>
+            <small>Curated everyday gear</small>
+          </span>
+        </a>
+
+        <div class="search-box">
+          <i data-lucide="search"></i>
+          <input id="searchInput" type="search" placeholder="Search products" />
+        </div>
+
+        <div class="header-actions">
+          <button id="themeBtn" class="icon-button" type="button" title="Toggle theme">
+            <i data-lucide="sun-medium"></i>
+            <span class="sr-only">Toggle theme</span>
+          </button>
+          <button id="wishlistBtn" class="icon-button badge-button" type="button" title="Wishlist">
+            <i data-lucide="heart"></i>
+            <span id="wishlistCount" class="count-dot">0</span>
+            <span class="sr-only">Wishlist</span>
+          </button>
+          <button id="cartBtn" class="cart-button" type="button">
+            <i data-lucide="shopping-bag"></i>
+            <span>Cart</span>
+            <strong id="cartCount">0</strong>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="commerce-hero" aria-label="Featured offer">
+          <div class="hero-copy">
+            <span class="eyebrow">Summer desk drop</span>
+            <h1>Shop sharper workdays.</h1>
+            <p>Premium tech, carry, and desk essentials with quick cart flows built for portfolio demo depth.</p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#catalog">
+                <i data-lucide="store"></i>
+                <span>Shop catalog</span>
+              </a>
+              <button id="dealBtn" class="ghost-button" type="button">
+                <i data-lucide="tag"></i>
+                <span>Apply LUMA10</span>
+              </button>
+            </div>
+          </div>
+          <div class="hero-stack">
+            <img src="assets/headphones.jpg" alt="Matte black wireless headphones" />
+            <div class="hero-stat">
+              <strong>24h</strong>
+              <span>fast dispatch</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="catalog" class="catalog-layout">
+          <aside class="filter-panel" aria-label="Shop filters">
+            <div class="panel-heading">
+              <span class="eyebrow">Filters</span>
+              <button id="clearFiltersBtn" class="text-button" type="button">Clear</button>
+            </div>
+
+            <div class="filter-group">
+              <label for="categoryFilter">Category</label>
+              <select id="categoryFilter">
+                <option value="all">All products</option>
+                <option value="Audio">Audio</option>
+                <option value="Wearables">Wearables</option>
+                <option value="Bags">Bags</option>
+                <option value="Workspace">Workspace</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="sortSelect">Sort by</label>
+              <select id="sortSelect">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+                <option value="rating">Top rated</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="maxPrice">Max price <strong id="priceLabel">$250</strong></label>
+              <input id="maxPrice" type="range" min="40" max="250" step="10" value="250" />
+            </div>
+
+            <label class="switch-row">
+              <input id="stockOnly" type="checkbox" />
+              <span>In stock only</span>
+            </label>
+
+            <div class="shipping-box">
+              <i data-lucide="truck"></i>
+              <div>
+                <strong>Free shipping</strong>
+                <span>Orders over $120</span>
+              </div>
+            </div>
+          </aside>
+
+          <section class="products-section" aria-label="Products">
+            <div class="section-top">
+              <div>
+                <span class="eyebrow">Catalog</span>
+                <h2>Featured products</h2>
+              </div>
+              <span id="resultCount" class="result-count">0 items</span>
+            </div>
+
+            <div class="category-chips" id="categoryChips" aria-label="Quick categories"></div>
+            <div id="productGrid" class="product-grid" aria-live="polite"></div>
+          </section>
+        </section>
+      </main>
+
+      <aside id="cartDrawer" class="cart-drawer" aria-label="Shopping cart">
+        <div class="drawer-header">
+          <div>
+            <span class="eyebrow">Checkout</span>
+            <h2>Your cart</h2>
+          </div>
+          <button id="closeCartBtn" class="icon-button" type="button" title="Close cart">
+            <i data-lucide="x"></i>
+            <span class="sr-only">Close cart</span>
+          </button>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="promo-row">
+          <input id="promoInput" placeholder="Promo code" />
+          <button id="promoBtn" class="ghost-button" type="button">Apply</button>
+        </div>
+
+        <div class="summary-list">
+          <div><span>Subtotal</span><strong id="subtotalText">$0</strong></div>
+          <div><span>Discount</span><strong id="discountText">-$0</strong></div>
+          <div><span>Shipping</span><strong id="shippingText">$0</strong></div>
+          <div class="total-row"><span>Total</span><strong id="totalText">$0</strong></div>
+        </div>
+
+        <button id="checkoutBtn" class="primary-button checkout-button" type="button">
+          <i data-lucide="credit-card"></i>
+          <span>Checkout</span>
+        </button>
+      </aside>
+    </div>
+
+    <dialog id="productDialog">
+      <div class="dialog-body">
+        <button id="closeProductBtn" class="icon-button dialog-close" type="button" title="Close">
+          <i data-lucide="x"></i>
+          <span class="sr-only">Close</span>
+        </button>
+        <img id="dialogImage" src="" alt="" />
+        <div class="dialog-copy">
+          <span id="dialogCategory" class="eyebrow"></span>
+          <h2 id="dialogTitle"></h2>
+          <p id="dialogDescription"></p>
+          <div class="dialog-meta">
+            <strong id="dialogPrice"></strong>
+            <span id="dialogRating"></span>
+          </div>
+          <button id="dialogAddBtn" class="primary-button" type="button">
+            <i data-lucide="shopping-bag"></i>
+            <span>Add to cart</span>
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="checkoutDialog">
+      <form id="checkoutForm" class="checkout-form" method="dialog">
+        <div class="drawer-header">
+          <div>
+            <span class="eyebrow">Secure demo</span>
+            <h2>Checkout details</h2>
+          </div>
+          <button id="closeCheckoutBtn" class="icon-button" type="button" title="Close">
+            <i data-lucide="x"></i>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+
+        <label>
+          Full name
+          <input id="checkoutName" required placeholder="Kaung Htet Kyaw" />
+        </label>
+        <label>
+          Email
+          <input id="checkoutEmail" type="email" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Delivery city
+          <input id="checkoutCity" required placeholder="Bangkok" />
+        </label>
+
+        <button class="primary-button checkout-button" type="submit">
+          <i data-lucide="check"></i>
+          <span>Place demo order</span>
+        </button>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

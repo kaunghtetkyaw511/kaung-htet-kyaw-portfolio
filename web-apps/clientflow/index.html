@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClientFlow - Project Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark">CF</div>
+          <div>
+            <strong>ClientFlow</strong>
+            <span>Project OS</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="#overview" class="nav-item active">
+            <i data-lucide="layout-dashboard"></i>
+            <span>Overview</span>
+          </a>
+          <a href="#board" class="nav-item">
+            <i data-lucide="kanban-square"></i>
+            <span>Board</span>
+          </a>
+          <a href="#projects" class="nav-item">
+            <i data-lucide="folder-kanban"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#insights" class="nav-item">
+            <i data-lucide="bar-chart-3"></i>
+            <span>Insights</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-panel">
+          <span class="panel-label">This month</span>
+          <strong id="sidebarRevenue">$0</strong>
+          <small>Projected revenue</small>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="search-wrap">
+            <i data-lucide="search"></i>
+            <input id="searchInput" type="search" placeholder="Search projects, clients, owners" />
+          </div>
+
+          <div class="topbar-actions">
+            <select id="statusFilter" aria-label="Filter by status">
+              <option value="all">All statuses</option>
+              <option value="lead">Lead</option>
+              <option value="planning">Planning</option>
+              <option value="progress">In progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select>
+            <button id="themeToggle" class="icon-button" type="button" title="Toggle theme">
+              <i data-lucide="sun-medium"></i>
+              <span class="sr-only">Toggle theme</span>
+            </button>
+            <button id="exportBtn" class="icon-button" type="button" title="Export JSON">
+              <i data-lucide="download"></i>
+              <span class="sr-only">Export JSON</span>
+            </button>
+            <button id="openProjectBtn" class="primary-button" type="button">
+              <i data-lucide="plus"></i>
+              <span>New Project</span>
+            </button>
+          </div>
+        </header>
+
+        <section id="overview" class="overview-band">
+          <div class="overview-copy">
+            <span class="eyebrow">Portfolio demo</span>
+            <h1>Client project command center</h1>
+            <p>Track retainers, launches, reviews, deadlines, and cash flow from one fast dashboard.</p>
+          </div>
+          <div class="overview-image" aria-label="Modern project planning workspace"></div>
+        </section>
+
+        <section class="metric-grid" aria-label="Project metrics">
+          <article class="metric-card">
+            <span>Active projects</span>
+            <strong id="activeCount">0</strong>
+            <small id="activeMeta">0 in motion</small>
+          </article>
+          <article class="metric-card">
+            <span>Total budget</span>
+            <strong id="totalBudget">$0</strong>
+            <small id="budgetMeta">Across all projects</small>
+          </article>
+          <article class="metric-card">
+            <span>Due soon</span>
+            <strong id="dueSoonCount">0</strong>
+            <small>Next 10 days</small>
+          </article>
+          <article class="metric-card">
+            <span>Avg progress</span>
+            <strong id="avgProgress">0%</strong>
+            <small id="progressMeta">Portfolio health</small>
+          </article>
+        </section>
+
+        <section id="insights" class="content-grid">
+          <div class="panel chart-panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Insights</span>
+                <h2>Budget by stage</h2>
+              </div>
+              <button id="resetBtn" class="ghost-button" type="button">
+                <i data-lucide="refresh-cw"></i>
+                <span>Reset demo</span>
+              </button>
+            </div>
+            <canvas id="budgetChart" height="260" aria-label="Budget chart"></canvas>
+          </div>
+
+          <div class="panel activity-panel">
+            <div class="panel-header">
+              <div>
+                <span class="eyebrow">Timeline</span>
+                <h2>Next deadlines</h2>
+              </div>
+            </div>
+            <div id="timelineList" class="timeline-list"></div>
+          </div>
+        </section>
+
+        <section id="board" class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Pipeline</span>
+              <h2>Project board</h2>
+            </div>
+          </div>
+          <div id="boardColumns" class="board" aria-live="polite"></div>
+        </section>
+
+        <section id="projects" class="section-block">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Directory</span>
+              <h2>Projects</h2>
+            </div>
+            <span id="resultCount" class="result-count">0 projects</span>
+          </div>
+          <div class="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Project</th>
+                  <th>Client</th>
+                  <th>Status</th>
+                  <th>Budget</th>
+                  <th>Due</th>
+                  <th>Progress</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="projectRows"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="projectDialog">
+      <form id="projectForm" method="dialog">
+        <div class="dialog-header">
+          <div>
+            <span class="eyebrow">Project</span>
+            <h2 id="dialogTitle">New project</h2>
+          </div>
+          <button class="icon-button" type="button" id="closeDialogBtn" title="Close">
+            <i data-lucide="x"></i>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+
+        <input type="hidden" id="projectId" />
+
+        <div class="form-grid">
+          <label>
+            Project name
+            <input id="projectName" required maxlength="64" placeholder="Launch website refresh" />
+          </label>
+          <label>
+            Client
+            <input id="clientName" required maxlength="48" placeholder="Northstar Studio" />
+          </label>
+          <label>
+            Owner
+            <input id="ownerName" required maxlength="40" placeholder="Kaung" />
+          </label>
+          <label>
+            Status
+            <select id="projectStatus">
+              <option value="lead">Lead</option>
+              <option value="planning">Planning</option>
+              <option value="progress">In progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select>
+          </label>
+          <label>
+            Budget
+            <input id="projectBudget" type="number" min="0" step="100" required placeholder="2400" />
+          </label>
+          <label>
+            Due date
+            <input id="projectDue" type="date" required />
+          </label>
+          <label>
+            Priority
+            <select id="projectPriority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+          <label>
+            Progress
+            <input id="projectProgress" type="range" min="0" max="100" step="5" />
+            <span id="progressValue" class="range-value">50%</span>
+          </label>
+          <label class="full-width">
+            Notes
+            <textarea id="projectNotes" rows="3" maxlength="180" placeholder="Brand direction approved, waiting on product photos."></textarea>
+          </label>
+        </div>
+
+        <div class="dialog-actions">
+          <button id="deleteProjectBtn" class="danger-button" type="button">
+            <i data-lucide="trash-2"></i>
+            <span>Delete</span>
+          </button>
+          <div>
+            <button class="ghost-button" type="button" id="cancelDialogBtn">Cancel</button>
+            <button class="primary-button" type="submit">
+              <i data-lucide="check"></i>
+              <span>Save project</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
