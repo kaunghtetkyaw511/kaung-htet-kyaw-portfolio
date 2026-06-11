@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CineScope is a responsive movie directory with TMDB integration, genre filters, detail routes, search, and a persistent watchlist."
+    />
+    <title>CineScope - Movie Directory</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app">Skip to movies</a>
+
+    <header class="site-header" data-header>
+      <a class="brand" href="#/" aria-label="CineScope home">
+        <span class="brand-mark"><i data-lucide="clapperboard"></i></span>
+        <span>CineScope</span>
+      </a>
+
+      <button
+        class="menu-toggle icon-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        title="Open navigation"
+      >
+        <i data-lucide="menu"></i>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#/">Discover</a>
+        <a href="#/?feed=now_playing">Now playing</a>
+        <a href="#/watchlist">
+          Watchlist
+          <span class="nav-count" data-watchlist-count>0</span>
+        </a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-button"
+          type="button"
+          data-api-settings
+          title="TMDB settings"
+        >
+          <i data-lucide="database"></i>
+          <span class="status-dot" data-api-dot></span>
+          <span class="sr-only">TMDB settings</span>
+        </button>
+        <a class="header-watchlist" href="#/watchlist">
+          <i data-lucide="bookmark"></i>
+          <span>Watchlist</span>
+          <b data-watchlist-count>0</b>
+        </a>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#/" aria-label="CineScope home">
+        <span class="brand-mark"><i data-lucide="clapperboard"></i></span>
+        <span>CineScope</span>
+      </a>
+      <p>Movie discovery, thoughtfully framed.</p>
+      <p>Data ready for TMDB integration.</p>
+    </footer>
+
+    <dialog class="settings-dialog" data-settings-dialog>
+      <form method="dialog" data-settings-form>
+        <div class="dialog-heading">
+          <div>
+            <span class="eyebrow">Data source</span>
+            <h2>Connect TMDB</h2>
+          </div>
+          <button
+            class="icon-button dialog-close"
+            type="button"
+            data-settings-close
+            title="Close"
+          >
+            <i data-lucide="x"></i>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+
+        <label class="token-field">
+          <span>API Read Access Token</span>
+          <input
+            type="password"
+            name="token"
+            autocomplete="off"
+            placeholder="eyJhbGciOiJIUzI1NiJ9..."
+          />
+        </label>
+
+        <p class="dialog-note">
+          Stored only in this browser. Leave it empty to use the built-in demo
+          catalog.
+        </p>
+
+        <div class="dialog-actions">
+          <button class="text-button" type="button" data-use-demo>
+            Use demo data
+          </button>
+          <button class="primary-button" type="submit">
+            <i data-lucide="plug-zap"></i>
+            <span>Connect</span>
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
