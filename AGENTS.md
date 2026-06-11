@@ -2,8 +2,8 @@
 
 ## Repository And Deployment
 
-- GitHub repository: `https://github.com/kaunghtetkyaw511/ui-portfolio`
-- GitHub Pages site: `https://kaunghtetkyaw511.github.io/ui-portfolio/`
+- GitHub repository: `https://github.com/kaunghtetkyaw511/kaung-htet-kyaw-portfolio`
+- GitHub Pages site: `https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/`
 - The Pages workflow is `.github/workflows/deploy-pages.yml`.
 - Every push to any branch triggers a GitHub Pages deployment.
 - Use `main` for ordinary portfolio updates unless the user explicitly requests a separate branch or pull request.
@@ -19,7 +19,7 @@ For every Codex task that changes files in this project:
 5. Push the current branch to `origin` before ending the conversation.
 6. Confirm that the `Deploy to GitHub Pages` workflow was triggered by the push.
 7. Wait for the workflow to complete successfully.
-8. Verify that `https://kaunghtetkyaw511.github.io/ui-portfolio/` returns HTTP 200.
+8. Verify that `https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/` returns HTTP 200.
 9. Report the commit, workflow result, and live Pages URL in the final response.
 
 Do not leave changes created for the current task uncommitted or unpushed. If
@@ -45,11 +45,11 @@ git diff --check
 git status --short --branch
 git push origin HEAD
 ~/.local/bin/gh run list \
-  --repo kaunghtetkyaw511/ui-portfolio \
+  --repo kaunghtetkyaw511/kaung-htet-kyaw-portfolio \
   --workflow deploy-pages.yml \
   --limit 5
 ~/.local/bin/gh run watch RUN_ID \
-  --repo kaunghtetkyaw511/ui-portfolio \
+  --repo kaunghtetkyaw511/kaung-htet-kyaw-portfolio \
   --exit-status
-curl -fsS https://kaunghtetkyaw511.github.io/ui-portfolio/ >/dev/null
+curl -fsS https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/ >/dev/null
 ```
