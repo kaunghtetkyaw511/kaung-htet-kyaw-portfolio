@@ -1,10 +1,12 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const siteHeader = document.querySelector(".site-header");
 const body = document.body;
 
 const setMenuOpen = (isOpen) => {
   navToggle?.setAttribute("aria-expanded", String(isOpen));
   siteNav?.classList.toggle("is-open", isOpen);
+  siteHeader?.classList.toggle("menu-open", isOpen);
   body.classList.toggle("menu-open", isOpen);
 };
 
@@ -43,6 +45,7 @@ let parallaxQueued = false;
 const updateParallax = () => {
   const shift = Math.min(window.scrollY * 0.09, 70);
   document.documentElement.style.setProperty("--hero-shift", `${shift}px`);
+  siteHeader?.classList.toggle("is-scrolled", window.scrollY > 36);
   parallaxQueued = false;
 };
 
@@ -56,6 +59,8 @@ window.addEventListener(
   },
   { passive: true },
 );
+
+updateParallax();
 
 const lightbox = document.querySelector("[data-lightbox]");
 const lightboxImage = document.querySelector("[data-lightbox-image]");
