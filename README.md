@@ -1,10 +1,10 @@
 # Kaung Htet Kyaw Graphic Design And Content Portfolio
 
 A premium portfolio for global freelance clients, focused on graphic design and
-content writing. Five interactive website projects, ClientFlow, LumaMart,
-North & Form, CineScope, and Atmos Weather, demonstrate responsive dashboard,
-online shop, pixel-perfect landing page, movie directory, and real-time API
-work alongside light video editing support.
+content writing. Six interactive website projects, ClientFlow, LumaMart,
+North & Form, CineScope, Atmos Weather, and Ledgerly, demonstrate responsive
+dashboard, online shop, pixel-perfect landing page, movie directory, real-time
+API, and local-first data work alongside light video editing support.
 
 ## Live Mini Websites
 
@@ -13,6 +13,7 @@ work alongside light video editing support.
 - [North & Form](https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/web-apps/north-form/)
 - [CineScope](https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/web-apps/cinescope/)
 - [Atmos Weather](https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/web-apps/atmos/)
+- [Ledgerly](https://kaunghtetkyaw511.github.io/kaung-htet-kyaw-portfolio/web-apps/ledgerly/)
 
 ## GitHub Pages
 
