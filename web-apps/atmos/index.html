@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Atmos is a responsive real-time weather dashboard powered by Open-Meteo."
+    />
+    <meta name="theme-color" content="#10222d" />
+    <title>Atmos - Real-time Weather</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%2216%22 fill=%22%23244d43%22/><circle cx=%2219%22 cy=%2213%22 r=%226%22 fill=%22%23f0c35f%22/><path d=%22M7 21c0-3 2-5 5-5 2 0 4 1 5 3 3-1 6 1 6 4H9c-1 0-2-1-2-2Z%22 fill=%22white%22/></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Atmos weather home">
+          <span class="brand-mark" aria-hidden="true">
+            <i data-lucide="cloud-sun"></i>
+          </span>
+          <span>Atmos</span>
+        </a>
+
+        <div class="search-wrap">
+          <form id="search-form" class="search-form" role="search">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input
+              id="city-search"
+              name="city"
+              type="search"
+              placeholder="Search a city"
+              aria-label="Search a city"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="icon-button search-submit" type="submit" aria-label="Submit city search" title="Search">
+              <i data-lucide="arrow-right"></i>
+            </button>
+          </form>
+          <div id="search-results" class="search-results" role="listbox" hidden></div>
+        </div>
+
+        <div class="topbar-actions">
+          <button id="location-button" class="icon-button" type="button" aria-label="Use current location" title="Use current location">
+            <i data-lucide="navigation"></i>
+          </button>
+          <div class="unit-toggle" aria-label="Temperature unit">
+            <button type="button" data-unit="celsius" class="active">°C</button>
+            <button type="button" data-unit="fahrenheit">°F</button>
+          </div>
+          <button id="open-saved" class="icon-button" type="button" aria-label="Open saved cities" title="Saved cities">
+            <i data-lucide="bookmark"></i>
+            <span id="saved-count" class="saved-count" hidden>0</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section id="weather-hero" class="weather-hero mood-cloudy" aria-labelledby="location-name">
+          <div class="hero-overlay"></div>
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <div class="location-row">
+                <div>
+                  <p id="local-time" class="eyebrow">Local time</p>
+                  <h1 id="location-name">Bangkok</h1>
+                  <p id="location-region" class="location-region">Thailand</p>
+                </div>
+                <button id="save-city" class="glass-icon-button" type="button" aria-label="Save this city" title="Save city">
+                  <i data-lucide="bookmark"></i>
+                </button>
+              </div>
+
+              <div class="current-weather">
+                <div class="temperature-block">
+                  <span id="current-temperature" class="current-temperature">--°</span>
+                  <div>
+                    <span id="current-icon" class="current-icon" aria-hidden="true">
+                      <i data-lucide="cloud-sun"></i>
+                    </span>
+                    <p id="current-condition" class="current-condition">Loading weather</p>
+                    <p id="current-range" class="current-range">H --° · L --°</p>
+                  </div>
+                </div>
+                <p id="weather-summary" class="weather-summary">
+                  Fetching the latest forecast for your selected city.
+                </p>
+              </div>
+            </div>
+
+            <div class="hero-panel" aria-label="Current weather details">
+              <div class="panel-status">
+                <span><span class="live-dot"></span>Live conditions</span>
+                <span id="last-updated">Updating...</span>
+              </div>
+              <div class="metric-grid">
+                <article class="metric">
+                  <i data-lucide="thermometer"></i>
+                  <div>
+                    <span>Feels like</span>
+                    <strong id="feels-like">--°</strong>
+                  </div>
+                </article>
+                <article class="metric">
+                  <i data-lucide="droplets"></i>
+                  <div>
+                    <span>Humidity</span>
+                    <strong id="humidity">--%</strong>
+                  </div>
+                </article>
+                <article class="metric">
+                  <i data-lucide="wind"></i>
+                  <div>
+                    <span>Wind</span>
+                    <strong id="wind-speed">-- km/h</strong>
+                  </div>
+                </article>
+                <article class="metric">
+                  <i data-lucide="gauge"></i>
+                  <div>
+                    <span>Pressure</span>
+                    <strong id="pressure">-- hPa</strong>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="forecast-section" aria-labelledby="hourly-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow dark">Next 12 hours</p>
+              <h2 id="hourly-heading">Weather through the day</h2>
+            </div>
+            <div class="section-note">
+              <i data-lucide="umbrella"></i>
+              <span id="rain-note">Precipitation outlook</span>
+            </div>
+          </div>
+          <div id="hourly-forecast" class="hourly-forecast" aria-live="polite"></div>
+        </section>
+
+        <section class="forecast-section daily-section" aria-labelledby="daily-heading">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow dark">7-day forecast</p>
+              <h2 id="daily-heading">The week ahead</h2>
+            </div>
+            <p id="timezone-label" class="timezone-label">Local forecast</p>
+          </div>
+          <div id="daily-forecast" class="daily-forecast" aria-live="polite"></div>
+        </section>
+
+        <section class="sun-section" aria-labelledby="sun-heading">
+          <div>
+            <p class="eyebrow dark">Daylight</p>
+            <h2 id="sun-heading">Sunrise to sunset</h2>
+          </div>
+          <div class="sun-track">
+            <div class="sun-times">
+              <span><i data-lucide="sunrise"></i><strong id="sunrise-time">--:--</strong> Sunrise</span>
+              <span><i data-lucide="sunset"></i><strong id="sunset-time">--:--</strong> Sunset</span>
+            </div>
+            <div class="sun-line" aria-hidden="true">
+              <span id="sun-progress"></span>
+              <i id="sun-marker" data-lucide="sun"></i>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Atmos Weather</span>
+        <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Data by Open-Meteo <i data-lucide="arrow-up-right"></i></a>
+      </footer>
+    </div>
+
+    <div id="loading-overlay" class="loading-overlay" role="status" aria-live="polite">
+      <span class="spinner" aria-hidden="true"></span>
+      <span>Reading the sky</span>
+    </div>
+
+    <div id="error-banner" class="error-banner" role="alert" hidden>
+      <i data-lucide="circle-alert"></i>
+      <span id="error-message">Weather data could not be loaded.</span>
+      <button id="retry-button" type="button">Try again</button>
+      <button id="dismiss-error" class="icon-button" type="button" aria-label="Dismiss error">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+    <aside id="saved-drawer" class="saved-drawer" aria-labelledby="saved-heading" aria-hidden="true">
+      <div class="drawer-heading">
+        <div>
+          <p class="eyebrow dark">Quick access</p>
+          <h2 id="saved-heading">Saved cities</h2>
+        </div>
+        <button id="close-saved" class="icon-button" type="button" aria-label="Close saved cities">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div id="saved-list" class="saved-list"></div>
+    </aside>
+  </body>
+</html>
