@@ -2657,9 +2657,12 @@ button.video-card {
     grid-template-columns: minmax(0, 0.78fr) minmax(320px, 0.44fr);
   }
 
-  .process-grid,
-  .video-strip {
+  .process-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .video-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .portfolio-grid {
