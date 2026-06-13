@@ -2216,6 +2216,36 @@ button.video-card {
   margin-top: 12px;
 }
 
+.content-modal-grid .content-list-item {
+  margin-top: 7px;
+  padding-left: 1.6rem;
+  text-indent: -1.6rem;
+}
+
+.content-modal-grid .content-step {
+  padding: 12px 14px;
+  border-left: 3px solid rgb(20 168 0 / 52%);
+  background: rgb(255 255 255 / 72%);
+}
+
+.content-modal-grid .content-subheading {
+  margin-top: 22px;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.content-modal-grid .content-cta {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid rgb(20 168 0 / 22%);
+  background: rgb(20 168 0 / 8%);
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .js .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -2721,7 +2751,11 @@ button.video-card {
   }
 
   .content-modal-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .content-modal-grid section:last-child {
+    grid-column: 1 / -1;
   }
 }
 
