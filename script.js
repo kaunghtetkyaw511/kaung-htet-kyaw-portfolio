@@ -121,6 +121,7 @@ const reelImage = document.querySelector("[data-reel-image]");
 const reelVideo = document.querySelector("[data-reel-video]");
 const reelTitle = document.querySelector("[data-reel-title]");
 const reelSummary = reelModal?.querySelector("[data-reel-summary]");
+const reelSource = reelModal?.querySelector("[data-reel-source]");
 const reelClose = document.querySelector("[data-reel-close]");
 
 document.querySelectorAll("[data-reel]").forEach((button) => {
@@ -143,6 +144,10 @@ document.querySelectorAll("[data-reel]").forEach((button) => {
       reelSummary.textContent =
         button.dataset.reelSummary ??
         "This area is ready for a final MP4 file or video embed.";
+    }
+    if (reelSource) {
+      reelSource.hidden = true;
+      reelSource.removeAttribute("href");
     }
     openDialog(reelModal);
   });
@@ -167,6 +172,18 @@ document.querySelectorAll("[data-video-src]").forEach((button) => {
       reelSummary.textContent =
         button.dataset.reelSummary ??
         "A short vertical story reel edited for social media.";
+    }
+    if (reelSource) {
+      const sourceUrl = button.dataset.sourceUrl;
+      reelSource.hidden = !sourceUrl;
+      if (sourceUrl) {
+        reelSource.href = sourceUrl;
+        reelSource.textContent =
+          button.dataset.sourceLabel ?? "View footage source";
+      } else {
+        reelSource.removeAttribute("href");
+        reelSource.textContent = "";
+      }
     }
     openDialog(reelModal);
     reelVideo?.play().catch(() => {});
@@ -196,6 +213,10 @@ document.querySelectorAll("[data-video-slot]").forEach((button) => {
       reelSummary.textContent =
         button.dataset.reelSummary ??
         "This video slot is ready for a final MP4 file, reel preview, or embedded video.";
+    }
+    if (reelSource) {
+      reelSource.hidden = true;
+      reelSource.removeAttribute("href");
     }
     openDialog(reelModal);
   });

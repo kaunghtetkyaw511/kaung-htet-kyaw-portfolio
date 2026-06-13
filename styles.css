@@ -2121,6 +2121,21 @@ button.video-card {
   line-height: 1.05;
 }
 
+.reel-source {
+  display: inline-flex;
+  margin-top: 10px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgb(255 255 255 / 34%);
+  color: rgb(255 255 255 / 68%);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.reel-source:hover {
+  color: white;
+}
+
 .content-modal {
   width: min(1180px, calc(100vw - 16px));
   max-width: none;
