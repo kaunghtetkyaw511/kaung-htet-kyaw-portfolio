@@ -118,14 +118,24 @@ lightbox?.addEventListener("click", (event) => {
 const reelModal = document.querySelector("[data-reel-modal]");
 const reelStage = document.querySelector(".reel-stage");
 const reelImage = document.querySelector("[data-reel-image]");
+const reelVideo = document.querySelector("[data-reel-video]");
 const reelTitle = document.querySelector("[data-reel-title]");
-const reelSummary = document.querySelector("[data-reel-summary]");
+const reelSummary = reelModal?.querySelector("[data-reel-summary]");
 const reelClose = document.querySelector("[data-reel-close]");
 
 document.querySelectorAll("[data-reel]").forEach((button) => {
   button.addEventListener("click", () => {
     lastFocusedElement = button;
     reelStage?.classList.remove("is-placeholder");
+    reelStage?.classList.remove("has-video");
+    reelVideo?.pause();
+    if (reelVideo) {
+      reelVideo.hidden = true;
+      reelVideo.removeAttribute("src");
+      reelVideo.removeAttribute("poster");
+      reelVideo.load();
+    }
+    reelImage.hidden = false;
     reelImage.src = button.dataset.reel;
     reelImage.alt = button.querySelector("img")?.alt ?? "";
     reelTitle.textContent = button.dataset.title ?? "Motion reel";
@@ -138,10 +148,44 @@ document.querySelectorAll("[data-reel]").forEach((button) => {
   });
 });
 
+document.querySelectorAll("[data-video-src]").forEach((button) => {
+  button.addEventListener("click", () => {
+    lastFocusedElement = button;
+    reelStage?.classList.remove("is-placeholder");
+    reelStage?.classList.add("has-video");
+    reelImage.hidden = true;
+    reelImage.removeAttribute("src");
+    reelImage.alt = "";
+    if (reelVideo) {
+      reelVideo.src = button.dataset.videoSrc;
+      reelVideo.poster = button.dataset.videoPoster ?? "";
+      reelVideo.hidden = false;
+      reelVideo.currentTime = 0;
+    }
+    reelTitle.textContent = button.dataset.title ?? "Story reel";
+    if (reelSummary) {
+      reelSummary.textContent =
+        button.dataset.reelSummary ??
+        "A short vertical story reel edited for social media.";
+    }
+    openDialog(reelModal);
+    reelVideo?.play().catch(() => {});
+  });
+});
+
 document.querySelectorAll("[data-video-slot]").forEach((button) => {
   button.addEventListener("click", () => {
     lastFocusedElement = button;
     reelStage?.classList.add("is-placeholder");
+    reelStage?.classList.remove("has-video");
+    reelVideo?.pause();
+    if (reelVideo) {
+      reelVideo.hidden = true;
+      reelVideo.removeAttribute("src");
+      reelVideo.removeAttribute("poster");
+      reelVideo.load();
+    }
+    reelImage.hidden = false;
     reelImage.removeAttribute("src");
     reelImage.alt = "";
     reelTitle.textContent =
@@ -157,11 +201,17 @@ document.querySelectorAll("[data-video-slot]").forEach((button) => {
   });
 });
 
-reelClose?.addEventListener("click", () => closeDialog(reelModal));
+const closeReel = () => {
+  reelVideo?.pause();
+  if (reelVideo) reelVideo.currentTime = 0;
+  closeDialog(reelModal);
+};
+
+reelClose?.addEventListener("click", closeReel);
 
 reelModal?.addEventListener("click", (event) => {
   if (event.target === reelModal) {
-    closeDialog(reelModal);
+    closeReel();
   }
 });
 
@@ -414,7 +464,7 @@ contentModal?.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     if (isDialogOpen(lightbox)) closeDialog(lightbox);
-    if (isDialogOpen(reelModal)) closeDialog(reelModal);
+    if (isDialogOpen(reelModal)) closeReel();
     if (isDialogOpen(contentModal)) closeDialog(contentModal);
     setMenuOpen(false);
   }

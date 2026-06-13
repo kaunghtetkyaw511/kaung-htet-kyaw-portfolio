@@ -460,7 +460,11 @@
 
         <div class="video-strip">
           <button class="video-card video-placeholder reveal" type="button" data-video-slot="video-1" data-title="Motion Reel" data-reel-summary="A preview space for short social media motion, title cards, animated text, and campaign reel direction." aria-label="Open Motion Reel preview"><span class="video-play" aria-hidden="true"></span><div><b>01 / Social</b><strong>Motion Reel</strong><small>Tap to preview</small></div></button>
-          <button class="video-card video-placeholder reveal" type="button" data-video-slot="video-2" data-title="Story Reel" data-reel-summary="A preview space for brand story reels, smooth transitions, short edits, and visual rhythm." aria-label="Open Story Reel preview"><span class="video-play" aria-hidden="true"></span><div><b>02 / Brand</b><strong>Story Reel</strong><small>Tap to preview</small></div></button>
+          <button class="video-card has-video reveal" type="button" data-video-src="./assets/video/vietnam-story-reel.m4v" data-video-poster="./assets/video/vietnam-story-reel-poster.jpg" data-title="Vietnam Story Reel" data-reel-summary="A vertical Vietnam travel story featuring mountain landscapes, cable-car views, paced cuts, branded overlays, and social-ready editing." aria-label="Play Vietnam Story Reel">
+            <img class="video-card-media" src="./assets/video/vietnam-story-reel-card.jpg" alt="Vietnam mountain cable-car view from the Story Reel" loading="lazy" />
+            <span class="video-play" aria-hidden="true"></span>
+            <div><b>02 / Travel</b><strong>Vietnam Story Reel</strong><small>Play 00:42 reel</small></div>
+          </button>
           <button class="video-card video-placeholder reveal" type="button" data-video-slot="video-3" data-title="Video Edit" data-reel-summary="A preview space for campaign video editing, CapCut edits, simple motion direction, and promotional clips." aria-label="Open Video Edit preview"><span class="video-play" aria-hidden="true"></span><div><b>03 / Campaign</b><strong>Video Edit</strong><small>Tap to preview</small></div></button>
         </div>
       </section>
@@ -674,6 +678,7 @@
       </button>
       <div class="reel-stage">
         <img data-reel-image alt="" />
+        <video data-reel-video controls playsinline preload="metadata" hidden></video>
         <span class="video-play video-play-large" aria-hidden="true"></span>
       </div>
       <div class="reel-modal-copy">
